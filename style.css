@@ -28,6 +28,19 @@
         font-size: 20px;
     }
   }
+@media (max-width: 340px) {
+    #about {
+        margin: 0px;
+        top: -10px;
+        font-size: 15px;
+    }
+    #artworks {
+        margin: 0px;
+        top: -10px;
+        font-size: 15px;
+    }
+  }
+
 body {
     margin: 0; padding: 0;
     max-width: 100%;
@@ -61,12 +74,27 @@ body {
 @media (max-width: 500px) {
     
     #logo{
-        font-size: 30px;
+        
         padding-left: 0%;
-        scale: 80%;
+        scale: 70%;
         margin-left: 0px;
-        left: -20px;
+        left: -10%;
+        
     }
+
+}
+
+@media (max-width: 360px) {
+    
+    #logo{
+        
+        padding-left: 0%;
+        scale: 60%;
+        margin-left: 0px;
+        left: -15%;
+        
+    }
+
 }
 
 #instagram {
@@ -84,9 +112,19 @@ body {
 @media (max-width: 500px) {
     
     #instagram{
-        right: -90px;
+        right: -23%;
     }
 }
+
+@media (max-width: 340px) {
+    
+    #instagram{
+        right: -31%;
+        scale: 8%;
+    }
+}
+
+
 
 #menu-bar {
     position: absolute;
@@ -110,8 +148,18 @@ body {
     #about{
         margin-left: 0px;
         margin-right: 0px;
+        top: -13px;
     }
 }
+
+@media (max-width: 340px) {
+    #about{
+        margin-left: 0px;
+        margin-right: 0px;
+        top: -15px;
+    }
+}
+
 
 #artworks {
     position: relative;
@@ -124,6 +172,15 @@ body {
     #artworks{
         margin-left: 0px;
         margin-right: 0px;
+        top: -13px;
+    }
+}
+
+@media (max-width: 340px) {
+    #artworks{
+        margin-left: 0px;
+        margin-right: 0px;
+        top: -15px;
     }
 }
 
@@ -140,13 +197,13 @@ body {
    
     color: red;
     font-family: 'AppleSDGothicNeoR';
-
 }
 @media (max-width: 500px) {
     
     #main-container{
         font-size: 50px;
         padding-left: 10%;
+        width: 70%;
     }
 }
 
@@ -163,13 +220,22 @@ body {
     padding-top: 30px;
     background-color: #F0F0F0;
 }
+
 @media (max-width:500px) {
     #footer{
         font-size: 10px;
         top: 200px;
-        height: 200px;
+        height: 250px;
     }
 
+}
+
+@media (min-height: 1100px){
+    #footer{
+        font-size: 20px;
+        top: 200px;
+        height: 500px;
+    }
 }
 
 a{
