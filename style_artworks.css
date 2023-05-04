@@ -211,7 +211,8 @@ body {
 
 @media (max-width:500px ) {
     .picture-item{
-        width: 100px;
+        width: 300px;
+        flex-basis: 300px;
     }
 }
 
@@ -222,7 +223,7 @@ body {
 
 @media (max-width:500px ) {
     .picture-item img{
-        width: 50%;
+        width: 80%;
     }
 }
 
