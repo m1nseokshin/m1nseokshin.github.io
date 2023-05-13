@@ -25,3 +25,6 @@ else if(matchMedia("screen and (max-width: 1024px)").matches){
   });
 }
 
+window.onresize = function(){
+  document.location.reload();
+};
