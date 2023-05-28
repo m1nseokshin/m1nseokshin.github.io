@@ -16,37 +16,11 @@
    ;
 }
 
-@media (max-width: 500px) {
-    #about {
-        margin: 0px;
-        top: -10px;
-        font-size: 20px;
-    }
-    #artworks {
-        margin: 0px;
-        top: -10px;
-        font-size: 20px;
-    }
-  }
-@media (max-width: 340px) {
-    #about {
-        margin: 0px;
-        top: -10px;
-        font-size: 15px;
-    }
-    #artworks {
-        margin: 0px;
-        top: -10px;
-        font-size: 15px;
-    }
-  }
-
 body {
     margin: 0; padding: 0;
     max-width: 100%;
     font-family: 'AppleSDGothicNeoL';
 }
-
 
 #header {
     position: absolute;
@@ -57,9 +31,8 @@ body {
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     background-color: #F0F0F0;
-   
-
 }
+
 #logo {
     position: relative;
     top: -10px;
@@ -69,57 +42,15 @@ body {
     z-index: 9000;
 }
 
-@media (max-width: 500px) {
-    
-    #logo{
-        
-        padding-left: 0%;
-        scale: 70%;
-        margin-left: 0px;
-        left: -10%;
-        
-    }
-
-}
-
-@media (max-width: 360px) {
-    
-    #logo{
-        
-        padding-left: 0%;
-        scale: 60%;
-        margin-left: 0px;
-        left: -15%;
-        
-    }
-
-}
-
 #instagram {
     
-   position: relative;
+    position: relative;
     float: right;
     top: -75px;
     right: -60px;
-    height: 0px;
+    height: 00px;
     z-index: 30000;
     scale: 10%;
-   
-}
-
-@media (max-width: 500px) {
-    
-    #instagram{
-        right: -23%;
-    }
-}
-
-@media (max-width: 340px) {
-    
-    #instagram{
-        right: -31%;
-        scale: 8%;
-    }
 }
 
 #menu-bar {
@@ -132,28 +63,11 @@ body {
     z-index: 19999;
 }
 
-
 #about {
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
     top: -10px;
-}
-
-@media (max-width: 500px) {
-    #about{
-        margin-left: 0px;
-        margin-right: 0px;
-        top: -13px;
-    }
-}
-
-@media (max-width: 340px) {
-    #about{
-        margin-left: 0px;
-        margin-right: 0px;
-        top: -15px;
-    }
 }
 
 #artworks {
@@ -163,156 +77,136 @@ body {
     top: -10px;
 }
 
+/* 헤더 미디어쿼리 */
+
+
 @media (max-width: 500px) {
+    
+    #logo{
+        padding-left: 0%;
+        scale: 70%;
+        margin-left: 0px;
+        left: -10%;
+    }
+
+    #instagram{
+        right: -23%;
+    }
+
+    #about{
+        margin-left: 0px;
+        margin-right: 0px;
+        top: -13px;
+        margin: 0px;
+        font-size: 20px;
+    }
+
+    @media (max-width: 500px) {
     #artworks{
         margin-left: 0px;
         margin-right: 0px;
         top: -13px;
+        margin: 0px;
+        font-size: 20px;
     }
+}
 }
 
 @media (max-width: 340px) {
-    #artworks{
+    
+    #logo{
+        
+        padding-left: 0%;
+        scale: 60%;
+        margin-left: 0px;
+        left: -15%;
+        
+    }
+
+    #instagram{
+        right: -31%;
+        scale: 8%;
+    }
+
+    #about{
         margin-left: 0px;
         margin-right: 0px;
         top: -15px;
+        margin: 0px;
+        font-size: 15px;
+    }
+
+    #artworks{
+     margin-left: 0px;
+     margin-right: 0px;
+     top: -15px;
+     margin: 0px;
+     font-size: 15px;
     }
 }
-
-
-
 
 /* -----------------------------------------------------------------------
 본문 영역
 ----------------------------------------------------------------------- */
 
+#back {
+    position: relative;
+    top: -105px;
+    scale: 80%; 
+    z-index: 12000;
+    left: -100px;
+}
+
+#menu-about {
+    position: relative;
+    width: 100%;
+    top: -10px;
+    height: 70px;
+    font-size: 30px;
+    color: rgb(41, 211, 25);
+    border-bottom: 1px solid black;
+    text-align: center;
+    line-height: 60px;
+    z-index: 9999;
+}
 
 #main-container {
     position: relative;
     width: 50%;
-    top: 50px;    
+    top: 0px;    
     font-size: 70px;
     padding-left: 20%;
     color: rgb(41, 211, 25);
     font-family: "AppleSDGothicNeoM";
 }
 
-@media (max-width: 500px) {
-    
-    #main-container{
-        font-size: 50px;
-        padding-left: 10%;
-        width: 70%;
-        top: 50px;
-    }
-}
-
 #contents {
     position: relative;
     width: 50%;
-    top: 50px;
+    top: -30px;
     font-size: 20px;
     padding-left: 20%;
     color: black;
     font-family: "AppleSDGothicNeoR";
 }
 
-@media (max-width: 500px) {
-    
-    #contents{
-        font-size: 20px;
-        padding-left: 10%;
-        width: 70%;
-        top: 50px;
-    }
-}
-
-
 #tools {
     position: relative;
-    width: 90%;
-    top: 80px;
+    width: 70%;
+    top: 50px;
     font-size: 30px;
     padding-left: 20%;
     color: rgb(41, 211, 25);
     font-family: "AppleSDGothicNeoR";
 }
 
-@media (max-width: 500px) {
-    
-    #tools{
-     padding-left: 10%;   
-    }
-}
-
 #tools-name {
     position: relative;
     width: 50%;
-    top: 60px;
+    top: 40px;
     font-size: 20px;
     padding-left: 20%;
 }
-
-
-@media (max-width: 500px) {
-    
-    #tools-name{
-     padding-left: 10%;   
-    }
-}
-
-#menu-about {
-    position: relative;
-    width: 100%;
-    top: 80px;
-    height: 80px;
-    font-size: 30px;
-    color: rgb(41, 211, 25);
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    background-color: white;
-    text-align: center;
-    padding-bottom: 1%;
-    z-index: 9999;
-}
-#back {
-    position: relative;
-    top: -35px;
-    left: -4%;
-    height: 0px;
-    z-index: 10000;
-    scale: 80%; 
-}
-
-@media (max-width: 500px){
-    #menu-about{
-        height: 70px;
-        font-size: 23px;
-    }
-
-    #back{
-        scale: 60%;
-        left: -10%;
-        top: -10px;
-    }
-}
-
-@media (max-width: 360px){
-    #menu-about{
-        height: 70px;
-        font-size: 23px;
-    }
-    
-    #back{
-        scale: 60%;
-        left: -10%;
-        height: 0px;
-        top: -10px
-    }
-
-}
-
-
 
 #footer {
     position: relative;
@@ -325,24 +219,6 @@ body {
     color: #707070;
     padding-top: 30px;
     background-color: #F0F0F0;
-}
-
-@media (max-width:500px) {
-    #footer{
-        font-size: 10px;
-        top: 200px;
-        height: 250px;
-    }
-
-}
-
-
-@media (min-height: 1100px){
-    #footer{
-        font-size: 20px;
-        top: 200px;
-        height: 500px;
-    }
 }
 
 a{
@@ -358,17 +234,70 @@ a:hover {
     text-decoration: none;
 }
 
-@media (min-width: 700px){
+/* 본문 미디어쿼리 */
+
+@media (max-width: 1200px) {
+
     #back{
-        height: 0px;
-        top: -25px
+        left: -50px;
     }
 }
 
-@media (min-width: 1700px){
+@media (max-width: 500px) {
+    
+    #menu-about{
+        height: 60px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+
     #back{
-        top: -35px;
-        left: -4%;
-        height: 0px;
+        scale: 70%;
+        left: -5%;
+       margin-top: 5px;
+
+    }
+    #main-container{
+        font-size: 50px;
+        padding-left: 10%;
+        width: 70%;
+        top: 50px;
+    }
+
+    #contents{
+        font-size: 20px;
+        padding-left: 10%;
+        width: 70%;
+        top: 50px;
+    }
+
+    #tools{
+        padding-left: 10%;   
+    }
+
+    #tools-name{
+        padding-left: 10%;   
+    }
+
+    #footer{
+        font-size: 10px;
+        top: 200px;
+        height: 250px;
     }
 }
+
+@media (max-width: 300px){
+    #menu-about{
+        font-size: 23px;
+    }
+
+}
+
+@media (min-height: 1100px){
+    #footer{
+        font-size: 20px;
+        top: 200px;
+        height: 500px;
+    }
+}
+

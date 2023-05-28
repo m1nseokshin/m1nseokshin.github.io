@@ -4,7 +4,7 @@ lightbox.option({
     disableScrolling: true,
     fitImagesInViewport:true,
     positionFromTop: 50
-})
+});
 
 if(matchMedia("screen and (max-width: 540px)").matches){
   lightbox.option({    
