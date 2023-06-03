@@ -20,30 +20,29 @@
 </head>
 
 <body>
-    
-    <div id="header">
-        <div id="logo"><p>xx_xstyles</p>
-        </div>
+    <div id="logo" class="logo-hover"><a href= "index.html">xx_xstyles</a></div>
 
-    <div id="instagram" class="menu"
+    <div id="header"> </div>
+
+<div id="instagram">
             
-          <a href="https://www.instagram.com/xx_xstyles/"><p><img src="image/instagram.svg"</p></a>
+   <a href="https://www.instagram.com/xx_xstyles/"><p><img src="image/instagram.svg" </p></a>
 
-    </div>
+</div>
 
-    <div id="menu-artworks">
-        Artworks</div>
+<div class="menu-bar">
+    <a id="about" href="about.html"> About? </a> &nbsp;
+    <a id="artworks" href="artworkmenu.html"> Artworks </a>
+</div>
 
-    <div id="menu-bar">
-        <p> <a id="about" href="about.html" class="menu"> About? </a>
-            <a id="artworks" href="artworkmenu.html" class="menu"> Artworks </a>
-        </p>
-    </div>
-    <div id="back">
-        <a href="artworkmenu.html"><p><img src="image/back.svg"</p></a>
-    </div>
+<div id="menu-artworks">
+    Artworks</div>
+
+<div id="back">
+    <a href="artworkmenu.html"><p><img src="image/back.svg"</p></a>
+</div>
     
-    <div id="picture" class="animate__animated animate__fadeInUp animate__delay-1s">
+    <div id="picture" class="animate__animated animate__fadeInUp animate__delay-0.5s">
     
         <div class="picture-item">
             <a href="artwork-contents/seoul_01.jpg" data-title="SEOUL" data-lightbox="example-set"><img src="artworks/seoul_01.jpg"></a>
@@ -85,10 +84,18 @@
             <p>
       </div>  
     </div>
-</div>
 
-     
-  
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
 
+    <div class="wrapper">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="artworkmenu.html">Artworks</a></li>
+            <li><a href="https://www.instagram.com/xx_xstyles/" target="_blank">Instagram</a></li>
+    
+    
 </body>
 </html>
