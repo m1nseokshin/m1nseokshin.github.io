@@ -217,7 +217,7 @@ input[type="checkbox"]{
     #logo{
         padding-left: 0%;
         scale: 70%;
-        margin-left: 0px;
+        margin-left:20px;
     }
 
     .logo-hover a{

@@ -204,7 +204,7 @@ input[type="checkbox"]{
     #logo{
         padding-left: 0%;
         scale: 70%;
-        margin-left: 0px;
+        margin-left: 20px;
         left: 0%;
     }
 
@@ -230,6 +230,8 @@ input[type="checkbox"]{
     }
 }
    
+
+
    @media (max-width: 340px) {
        
        #logo{
