@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="style_artworkmenu.css">
     <title>Artworks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="hamburger.js"></script>
     <link rel="apple-touch-icon" sizes="60x60" href="favicon_package_v0/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0/favicon-16x16.png">
@@ -40,11 +42,11 @@
 
 <div id="picture">
      <div class="artworkbox">
-     <a href="3dartworks.html"class="animate__animated animate__fadeInUp" ><img src="artworkmenu/artworkbox_no1.jpg"></a>
+     <a href="3dartworks.html"class="animate__animated animate__fadeIn" ><img src="artworkmenu/artworkbox_no1.jpg"></a>
      </div>
 
      <div class="artworkbox">
-     <a href="2dartworks.html"class="animate__animated animate__fadeInUp" ><img src="artworkmenu/artworkbox_no2.jpg"></a>
+     <a href="2dartworks.html"class="animate__animated animate__fadeIn" ><img src="artworkmenu/artworkbox_no2.jpg"></a>
     </div>
 </div>
 
@@ -57,16 +59,22 @@
     <p>
 </div>
 
-<input type="checkbox" id="active">
-<label for="active" class="menu-btn"><span></span></label>
-<label for="active" class="close"></label>
-
-<div class="wrapper">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="artworkmenu.html">Artworks</a></li>
-        <li><a href="https://www.instagram.com/xx_xstyles/" target="_blank">Instagram</a></li>
+<a class="hamburger-button">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>  
+  
+  <div class="overlay">
+    <nav class="menu">
+      <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="artworkmenu.html">Artworks</a></li>
+              <li><a href="https://www.instagram.com/xx_xstyles/" target="_blank">Instagram</a></li>
+          </ul>
+      </div>
 
 </body>
 </html>
