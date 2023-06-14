@@ -118,7 +118,7 @@ body {
     display: none;
     top: 25px;
     right: 2rem;
-    z-index: 100000;
+    z-index: 20000;
   }
   
     .hamburger-button span {
@@ -194,7 +194,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: 1s;
-    z-index: 30000;
+    z-index: 19999;
   }
   
   .overlay.visible{
