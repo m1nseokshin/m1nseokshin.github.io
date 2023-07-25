@@ -3,69 +3,150 @@
 <head>
     <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <link rel="stylesheet" type="text/css" href="style.css" hraf="style_about.html" hraf="artworks.html" href="hamburger.js">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="hamburger.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" href="lightbox.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Minseok's Portfolio</title>
 
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon_package_v0/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0/favicon-16x16.png">
-    <link rel="manifest" href="favicon_package_v0/site.webmanifest">
-    <link rel="mask-icon" href="favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
-    <div id="logo" class="logo-hover"><a href= "index.html">xx_xstyles</a></div>
+<body class="no-scroll">
 
-    <div id="header"> </div>
+    <div class="bar">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+     
 
-<div id="instagram">
-            
-   <a href="https://www.instagram.com/xx_xstyles/"><p><img src="image/instagram.svg" </p></a>
-
-</div>
-
-<div class="menu-bar">
-    <a id="about" href="about.html"> About? </a> &nbsp;
-    <a id="artworks" href="artworkmenu.html"> Artworks </a>
-</div>
-    
-    <div id="main-container" class="animate__animated animate__fadeInDown">
-            <p> <div><a>Points</a></div>
-                <div><a> Lines</a></div>
-                <div><a> Planes</a></div>
-                <div><a> And Colors</a></div>
-                <div><a> That’s all.</a></div>
-            </p>
+    <div class="header" data-aos="fade" data-aos-duration="3000">
+        <div class="links">
+        <a class="link" href="https://github.com/m1nseokshin">
+            <img class="link-img" src="img/logo1.svg">
+        </a>
+        <a class="link" href="https://www.instagram.com/xx_xstyles">
+            <img class="link-img" src="img/logo2.svg">
+        </a>
+        </div>
     </div>
 
-    <div id="footer">
-        <div>본 페이지는 포트폴리오 용도로 제작되었습니다. 작업물의 무단 배포를 금합니다.</div>
-        <div>Contact: m1nseokdesign@gmail.com</div>
-        <div>© 2023 by Minseok Shin.</div>
-    </div>    
+    <div id="section" style=" text-align: center; background-color: rgb(246, 246, 246);">
+        <div class="main-text" data-aos="fade" data-aos-duration="3000">
+            <div class='typing'>안녕하세요. <div class="typing">저는<span class="text" style="color:rgb(48, 176, 65);"></span></div><div class="typing">신민석 입니다.</div></div>
+        </div>
 
-<a class="hamburger-button">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</a>  
-
-<div class="overlay">
-  <nav class="menu">
-    <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="artworkmenu.html">Artworks</a></li>
-            <li><a href="https://www.instagram.com/xx_xstyles/" target="_blank">Instagram</a></li>
-        </ul>
+        <a href="#section2" class="expandbutton">
+            <div class="subtitle">Click!</div>
+            <img src="img/expandmore.svg">
+        </a>
     </div>
-</div>
+
+    <div id="section2" class="sections" style=" text-align: center; background-color: rgb(0, 0, 0); color: white;">
+        <div class="profile">
+            <img src="img/profile.png" data-aos="fade" data-aos-duration="3000">
+            <div class="title-left" data-aos="fade-up" data-aos-duration="1500">안녕하세요! 디자이너이자 개발자가 꿈인 신민석입니다!<br>
+            현재 대학교 2학년 과정을 밟고 있으며, 디자인과 개발 모두 능숙하게 다루는 인재가 되는 것이 저의 궁극적인 목표입니다.<br>
+            <hr data-aos="fade-right" data-aos-duration="1500">
+            <div class="title-left" data-aos="fade" data-aos-duration="3000" style="color: rgb(83, 218, 101);">Experience</div>
+            <div class="a-subtitle-left" data-aos="fade-up" data-aos-duration="3000">
+                 <span style="font-family:'R';">대구가톨릭대학교 디지털디자인과</span> (2022.03 ~ 2028.02) 전공학점: 4.25 / 전체학점: 4.14<br>
+                 <span style="font-family:'R';">디지털디자인과 학생회</span> (2023.03 ~ 2023.12)<br>
+                 <span style="font-family:'R';">디지털디자인과 과대표</span> (2023.03 ~ 2023.12)<br>
+                 <span style="font-family:'R';">디지털디자인과 학과동아리 '디지로그'</span> (2022.08 ~ 2023.12)<br>
+                 <span style="font-family:'R';">가톨릭 학생회동아리 '주춧돌'</span> (2022.08 ~ 2023.12)<br>
+
+            </div>
+
+            </div>
+        </div>
+                    
+    </div>
+
+    <div id="section3" class="sections" style="text-align: center; background-color: rgb(246, 246, 246);">
+        <div class="portfolio-container">
+            <div class="portfolio-item" data-aos="fade-up" data-aos-duration="1500">
+                <div class="subtitle-left" >Web Portfolio 1</div>
+                <div class="title-left" style="color:rgb(48, 176, 65)">가구 판매 사이트 디자인</div>
+                <div class="contents-left">가상의 가구 판매 사이트 디자인입니다. <br> 제각기간은 약 3주이며, Vue.js 프레임워크를 사용하여 제작했습니다.</div>
+                <a href="https://m1nseokshin.github.io/Styles/" class="visit-button">사이트 방문하기</a> 
+            </div>
+            <a class="portfolio-item" href="https://m1nseokshin.github.io/Styles/" data-aos="fade" data-aos-duration="2000"><img src="img/p_01.png"></a>
+        </div>
+    </div>
+
+    <div id="section4" class="sections" style="text-align: center; background-color: rgb(246, 246, 246);">
+        <div class="portfolio-container">
+            <div class="portfolio-item" data-aos="fade-up" data-aos-duration="3000">
+                <div class="subtitle-left" >Web Portfolio 2</div>
+                <div class="title-left" style="color:rgb(48, 176, 65)">음원 스트리밍 사이트 리디자인</div>
+                <div class="contents-left">음원 스트리밍 서비스를 제공하는 Bugs의 사이트 리디자인입니다. <br> 제각기간은 약 1주이며, JQuary, JS를 사용하여 제작했습니다.</div>
+                <a href="https://m1nseokshin.github.io/Bugs/" class="visit-button">사이트 방문하기</a> 
+            </div>
+            <a class="portfolio-item" href="https://m1nseokshin.github.io/Bugs/" data-aos="fade" data-aos-duration="2000"><img src="img/p_02.png"></a>
+        </div>
+    </div>
+
+    <div id="section5" class="sections" style=" text-align: center; background-color: rgb(246, 246, 246);">
+        <div class="title" style=" position: relative; top: -50px;">Design Artworks</div>
+        <div class="subtitle" style=" position: relative; top: -60px;">Blender를 통해 만든 작업물입니다.</div>
+
+        <div id="picture" data-aos="fade" data-aos-duration="1500">
+            <div class="picture-item">
+                <img src="artworks/3dartworks/01.jpg">
+            </div>
+            <div class="picture-item">
+                <img src="artworks/3dartworks/02.jpg">  
+            </div>
+            <div class="picture-item">
+                <img src="artworks/3dartworks/03.jpg">
+            </div>    
+            <div class="picture-item">
+                <img src="artworks/3dartworks/04.jpg">
+            </div>
+            <div class="picture-item">
+                <img src="artworks/3dartworks/05.jpg"> 
+            </div>
+            <div class="picture-item">
+                <img src="artworks/3dartworks/06.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div id="section6"  style=" text-align: center; background-color: rgb(83, 218, 101); color: white; z-index: 300;">
+ 
+        <div class="footer-container">
+            <div class="title">Skills</div>
+            <div class="subtitle" style="margin-bottom: 50px;">현재 제가 다룰 수 있는 툴입니다.</div>
+            <div class="item-container">
+                <div class="footer-item1">
+                    <div class="title" style="color: black;">Develop Tools</div>
+                    <img src="img/s_01.png">
+                    <img src="img/s_02.png">
+                </div>
+
+                <div class="footer-item1">
+                    <div class="title" style="color: black;">Design Tools</div>
+                    <img src="img/s_03.png">
+                    <img src="img/s_04.png">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            본 페이지는 포트폴리오 용도로 제작되었습니다. 작업물의 무단 배포를 금합니다.<br>
+            Contact: m1nseokdesign@gmail.com<br>
+            © 2023 by Minseok Shin.
+        </div>
+    </div>
+
+    <script src="changetext.js"></script>  
+    <script src="scrollscript.js"></script>
+    <script src="changesvg.js"></script>
+    <script src="progressbar.js"></script>
+    <script>AOS.init();</script>
 
 </body>
+
 </html>
