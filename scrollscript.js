@@ -1,5 +1,5 @@
 window.onload = function() {
-  const elm = document.querySelectorAll('#section2, #section3, #section4, #section5, #section6');
+  const elm = document.querySelectorAll('#section, #section2, #section3, #section4, #section5, #section6');
   const elmCount = elm.length;
   const duration = 250; // Set the duration of the scroll animation in milliseconds
 
