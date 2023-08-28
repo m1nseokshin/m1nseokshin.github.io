@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function() {
   var section2 = document.getElementById('section2');
-  var section3 = document.getElementById('section6');
+  var section3 = document.getElementById('section7');
   var linksSVGs = document.querySelectorAll('.links img');
 
   // #section2 요소가 뷰포트에 보이는지 확인
