@@ -31,7 +31,9 @@ body {
   font-family: 'L';
 }
 
-
+.no-scroll{
+  overflow: hidden;
+}
 
 #section{
   position: relative;
