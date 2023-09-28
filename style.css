@@ -425,6 +425,10 @@ body {
 
 @media screen and (max-width: 1024px) {
 
+  .no-scroll{
+    overflow: auto;
+  }
+
   #section2{
     display: flex;
   }
