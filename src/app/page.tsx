@@ -1,65 +1,141 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useState } from "react";
+import Link from "next/link";
+import TypingTitle from "@/components/TypingTitle";
+import HeroCanvas from "@/components/HeroCanvas";
+import ScrollReveal from "@/components/ScrollReveal";
+import { MailIcon, InstagramIcon, GithubIcon } from "@/components/Footer";
+
+import { useRouter } from "next/navigation";
+
+export default function HomePage() {
+  const [showSubContent, setShowSubContent] = useState(false);
+  const router = useRouter();
+
+  const handlePhilosophyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById("philosophy");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#philosophy");
+    }
+  };
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#contact") {
+      const timer = setTimeout(() => {
+        const element = document.getElementById("contact");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 350);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative min-h-screen w-full bg-white overflow-hidden">
+      {/* Scroll Progress bar */}
+      <div className="scroll-progress-container">
+        <div className="scroll-progress-bar" id="scroll-bar" style={{ width: "0%" }}></div>
+      </div>
+
+      {/* Hero Section */}
+      <section id="about" className="hero-section relative w-full h-screen flex items-center justify-center overflow-hidden">
+        {/* Interactive physics grid background */}
+        <div 
+          className="absolute inset-0 w-full h-full transition-opacity duration-[1500ms]"
+          style={{ opacity: showSubContent ? 1 : 0 }}
+        >
+          <HeroCanvas />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="hero-content-wrapper relative z-10 flex flex-col items-center max-w-[1100px] text-center px-4">
+          <div 
+            className="hero-pre-title text-xs uppercase tracking-[2px] font-semibold text-gray-500 mb-6 transition-all duration-1000"
+            style={{
+              opacity: showSubContent ? 1 : 0,
+              transform: showSubContent ? "translateY(0)" : "translateY(10px)",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Minseok Shin Portfolio
+          </div>
+          
+          <TypingTitle 
+            part1="디자인과 개발의 \n"
+            part2={typeof window !== "undefined" && window.innerWidth < 640 ? "경계를 허물어\n" : "경계를 허물어"}
+            part3=" 가치를 만듭니다."
+            onComplete={() => setShowSubContent(true)}
+          />
+
+          <div 
+            className="hero-buttons flex justify-center gap-4 transition-all duration-1000"
+            style={{
+              opacity: showSubContent ? 1 : 0,
+              transform: showSubContent ? "translateY(0)" : "translateY(10px)",
+              pointerEvents: showSubContent ? "auto" : "none",
+            }}
           >
-            Documentation
-          </a>
+            <Link 
+              href="#philosophy" 
+              className="btn btn-primary"
+              onClick={handlePhilosophyClick}
+            >
+              자세히 알아보기
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Design Philosophy Section */}
+      <section id="philosophy" className="values-section py-section">
+        <div className="container">
+          <p className="section-label mb-6 max-md:mb-0">Philosophy</p>
+          <div className="philosophy-layout">
+            <div className="philosophy-left">
+              <h2 className="philosophy-main-text">
+                디자인과 개발의 경계를 허물어<br />
+                웹에서 완벽한 가치를 만듭니다.
+              </h2>
+            </div>
+            
+            <div className="philosophy-right">
+              <p className="philosophy-desc-text">
+                디자인의 감성적 가치와 개발의 논리적인 프로세스의 접점에서 최상의 사용자 경험이 탄생한다고 생각합니다. 정적인 웹사이트가 아닌 생동감 있는 인터랙티브 웹을 지향하며, 완성도 높은 개발 역량을 목표로 합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <ScrollReveal className="py-section px-4" threshold={0.2}>
+        <section id="contact" className="projects-section rounded-none py-16 sm:py-24 px-8 sm:px-16" style={{ backgroundColor: "var(--palette-grey-10)" }}>
+          <div className="container">
+            <div className="section-header text-center mb-0">
+              <p className="section-label">Get in Touch</p>
+              <h2 className="section-title mb-6">협업 문의 및 연락처</h2>
+              <p className="hero-subtitle text-lg max-w-[600px] mx-auto mb-10" style={{ color: "var(--theme-surface-on-surface-variant)" }}>
+                협업이나 기타 문의사항은 자유롭게 아래로 연락 부탁드립니다.
+              </p>
+              
+              <div className="flex justify-center gap-6 flex-wrap">
+                <a href="mailto:m1nseokdesign@gmail.com" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Email">
+                  <MailIcon size={24} />
+                </a>
+                <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Instagram">
+                  <InstagramIcon size={24} />
+                </a>
+                <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="GitHub">
+                  <GithubIcon size={24} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+    </main>
   );
 }

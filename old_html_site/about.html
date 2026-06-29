@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="디자이너이자 프론트엔드 개발자 신민석의 상세 소개 페이지입니다.">
+  <title>About | Minseok Shin</title>
+  
+  <link rel="icon" href="img/profile.png" type="image/png">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-nav" id="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        MINSEOK SHIN
+      </a>
+      
+      <nav class="nav-links">
+        <a href="about.html" class="nav-link" data-drawer="about">소개</a>
+        <a href="work.html" class="nav-link" data-drawer="projects">작업</a>
+      </nav>
+      
+      <a href="index.html#contact" class="nav-cta-btn">Contact Me</a>
+      
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <span class="symbol">menu</span>
+      </button>
+    </div>
+
+    <!-- Desktop Dropdown Drawers Panel (Antigravity Style) -->
+    <div class="nav-dropdown-drawer" id="nav-drawer">
+      <div class="container drawer-grid">
+        
+        <!-- Drawer Section: About -->
+        <div class="drawer-panel" id="drawer-about">
+          <div class="drawer-left">
+            <h4 class="drawer-title">소개 (Profile)</h4>
+            <p class="drawer-desc">디자인과 프론트엔드 개발 능력을 조화롭게 갖추어 사용성과 미학을 균형 있게 충족시키는 인재가 되는 것이 목표입니다.</p>
+          </div>
+          <div class="drawer-right">
+            <ul class="drawer-links-grid">
+              <li>
+                <a href="about.html#profile" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">인사말 & 포부</span>
+                    <span class="item-sub">디자이너와 개발자의 융합</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="about.html#experience" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">학적 및 경험</span>
+                    <span class="item-sub">부산대학교 디자인학과 디자인테크놀로지전공</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="about.html#skills" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">기술 스택</span>
+                    <span class="item-sub">사용하는 개발 & 디자인 툴</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Drawer Section: Projects -->
+        <div class="drawer-panel" id="drawer-projects">
+          <div class="drawer-left">
+            <h4 class="drawer-title">주요 프로젝트 (Showcase)</h4>
+            <p class="drawer-desc">최신 프론트엔드 프레임워크(Next.js, Vue.js, TypeScript)로 제작된 포트폴리오를 탐색해보세요.</p>
+          </div>
+          <div class="drawer-right">
+            <ul class="drawer-links-grid">
+              <li>
+                <a href="work.html#project-artworks" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Design Artworks</span>
+                    <span class="item-sub">아트웍스 비디오 전시회</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-rx7" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Mazda RX-7</span>
+                    <span class="item-sub">Next.js 자동차 소개 웹사이트</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-styles" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Styles Furniture</span>
+                    <span class="item-sub">Vue.js 가구 쇼핑몰 디자인</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-subway" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Daegu Subway Search</span>
+                    <span class="item-sub">TypeScript 노선 검색기</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="about.html" class="nav-link">소개</a>
+    <a href="work.html" class="nav-link">작업</a>
+    <a href="index.html#contact" class="nav-cta-btn">Contact Me</a>
+  </div>
+
+  <!-- Profile Hero: Typing Greeting Only (100vh) -->
+  <section id="profile" class="about-hero-section">
+    <div class="container">
+      <h2 class="profile-greeting-title typing-cursor" id="about-typing-title">
+        안녕하세요!<br>
+        예비 UX 디자이너 <span class="hero-title-accent">신민석</span>입니다.
+      </h2>
+    </div>
+  </section>
+
+  <!-- Profile Details Section -->
+  <section class="about-details-section">
+    <div class="container">
+      <div class="about-profile-grid">
+        
+        <!-- Left: Description & Details -->
+        <div class="about-left-column">
+          <div class="about-desc-block">
+            <p class="about-desc-main">
+              현재 부산대학교 디자인학과 디자인테크놀로지전공에 재학하며, 디자인과 테크놀로지의 결합을 연구하고 있습니다. 디자인의 조형미와 프론트엔드 코드 구현력을 조화롭게 결합해 사용자가 만족하는 가치 있는 웹 환경을 만듭니다.
+            </p>
+            <p class="about-desc-sub">
+              사용자 경험(UX) 연구와 고충격 인터랙션 프로토타이핑을 핵심 지향점으로 삼고 있으며, 기획 단계의 철학을 브라우저 상의 세밀한 움직임과 부드러운 그래픽 물리 엔진 코드로 풀어내는 데 깊은 흥미를 느끼고 있습니다.
+            </p>
+          </div>
+          
+          <div class="profile-details-list">
+            <div class="profile-detail-item">
+              <span class="detail-label">학적</span>
+              <span class="detail-val">부산대학교 예술대학 디자인학과 디자인테크놀로지전공 재학 (2026.03 ~)</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">활동</span>
+              <span class="detail-val">Korea Design Membership Plus 7기 (2026.04 ~)</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">활동</span>
+              <span class="detail-val">Travel Busan With Google Gemini 서포터즈 (2026.06 ~)</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">관심분야</span>
+              <span class="detail-val">HCI / Web Development</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Profile Image Card -->
+        <div class="about-right-column">
+          <div class="profile-image-card">
+            <img src="img/profile.png" alt="신민석 프로필">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey & Education Section -->
+  <section id="experience" class="experience-section py-section" style="background-color: var(--palette-grey-10);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header fade-in-up">
+        <p class="section-label">Journey & Education</p>
+        <h2 class="section-title">학적 및 경험</h2>
+      </div>
+      
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3 class="exp-title">부산대학교 디자인학과 디자인테크놀로지전공</h3>
+          <span class="exp-date">2026.03 ~ 현재 재학 중</span>
+        </div>
+        <div class="experience-item">
+          <h3 class="exp-title">Korea Design Membership Plus 7기</h3>
+          <span class="exp-date">2026.04 ~ 현재 진행 중</span>
+        </div>
+        <div class="experience-item">
+          <h3 class="exp-title">Travel Busan With Google Gemini 서포터즈</h3>
+          <span class="exp-date">2026.06 ~ 현재 진행 중</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Stack Section -->
+  <section id="skills" class="skills-section py-section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-label">Capabilities</p>
+        <h2 class="section-title">운용 툴 및 개발 기술 스택</h2>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- AI Stacks -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">AI Stacks</h3>
+          <div class="skills-tag-container">
+            <span class="skill-tag">Google Gemini (Antigravity)</span>
+            <span class="skill-tag">Chat-gpt (CodeX)</span>
+            <span class="skill-tag">Claude</span>
+            <span class="skill-tag">Seedance 2.0</span>
+          </div>
+        </div>
+        
+        <!-- Tech Stacks -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">Tech Stacks</h3>
+          <div class="skills-tag-container">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">Javascript</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">JAVA</span>
+            <span class="skill-tag">Android Studio (JAVA)</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Processing</span>
+          </div>
+        </div>
+        
+        <!-- Design Stacks -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">Design Stacks</h3>
+          <div class="skills-tag-container">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Adobe Illustrator</span>
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Adobe Premiere Pro</span>
+            <span class="skill-tag">Blender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Antigravity Premium Footer Section -->
+  <footer class="footer-section scroll-expand">
+    <div class="container">
+      <div class="footer-grid-wrapper">
+        <div class="footer-brand-column">
+          <h3 class="footer-headline">Enjoy Technology!</h3>
+        </div>
+        <div class="footer-links-columns">
+          <div>
+            <h4 class="footer-col-title">Site Map</h4>
+            <div class="footer-links-column">
+              <a href="index.html" class="footer-link">홈 (Home)</a>
+              <a href="about.html" class="footer-link">소개 (About)</a>
+              <a href="work.html" class="footer-link">작업 (Work)</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-links-column">
+              <a href="mailto:m1nseokdesign@gmail.com" class="footer-link">m1nseokdesign@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-giant-brand">
+        MINSEOK SHIN
+      </div>
+      
+      <div class="footer-bottom-bar">
+        <div class="footer-logo-small">MINSEOK SHIN</div>
+        <div class="footer-bottom-links">
+          <span class="footer-copyright-text">© 2026 Minseok Shin. All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+</html>

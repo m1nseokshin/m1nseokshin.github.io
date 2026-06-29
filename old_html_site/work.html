@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="디자이너이자 프론트엔드 개발자 신민석의 작업물 리스트입니다.">
+  <title>Work | Minseok Shin</title>
+  
+  <link rel="icon" href="img/profile.png" type="image/png">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header-nav" id="header-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        MINSEOK SHIN
+      </a>
+      
+      <nav class="nav-links">
+        <a href="about.html" class="nav-link" data-drawer="about">소개</a>
+        <a href="work.html" class="nav-link" data-drawer="projects">작업</a>
+      </nav>
+      
+      <a href="index.html#contact" class="nav-cta-btn">Contact Me</a>
+      
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <span class="symbol">menu</span>
+      </button>
+    </div>
+
+    <!-- Desktop Dropdown Drawers Panel (Antigravity Style) -->
+    <div class="nav-dropdown-drawer" id="nav-drawer">
+      <div class="container drawer-grid">
+        
+        <!-- Drawer Section: About -->
+        <div class="drawer-panel" id="drawer-about">
+          <div class="drawer-left">
+            <h4 class="drawer-title">소개 (Profile)</h4>
+            <p class="drawer-desc">디자인과 프론트엔드 개발 능력을 조화롭게 갖추어 사용성과 미학을 균형 있게 충족시키는 인재가 되는 것이 목표입니다.</p>
+          </div>
+          <div class="drawer-right">
+            <ul class="drawer-links-grid">
+              <li>
+                <a href="about.html#profile" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">인사말 & 포부</span>
+                    <span class="item-sub">디자이너와 개발자의 융합</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="about.html#experience" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">학적 및 경험</span>
+                    <span class="item-sub">부산대학교 디자인학과 디자인테크놀로지전공</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="about.html#skills" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">기술 스택</span>
+                    <span class="item-sub">사용하는 개발 & 디자인 툴</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Drawer Section: Projects -->
+        <div class="drawer-panel" id="drawer-projects">
+          <div class="drawer-left">
+            <h4 class="drawer-title">주요 프로젝트 (Showcase)</h4>
+            <p class="drawer-desc">최신 프론트엔드 프레임워크(Next.js, Vue.js, TypeScript)로 제작된 포트폴리오를 탐색해보세요.</p>
+          </div>
+          <div class="drawer-right">
+            <ul class="drawer-links-grid">
+              <li>
+                <a href="work.html#project-artworks" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Design Artworks</span>
+                    <span class="item-sub">아트웍스 비디오 전시회</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-rx7" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Mazda RX-7</span>
+                    <span class="item-sub">Next.js 자동차 소개 웹사이트</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-styles" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Styles Furniture</span>
+                    <span class="item-sub">Vue.js 가구 쇼핑몰 디자인</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="work.html#project-subway" class="drawer-link-item">
+                  <div class="item-text">
+                    <span class="item-title">Daegu Subway Search</span>
+                    <span class="item-sub">TypeScript 노선 검색기</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="about.html" class="nav-link">소개</a>
+    <a href="work.html" class="nav-link">작업</a>
+    <a href="index.html#contact" class="nav-cta-btn">Contact Me</a>
+  </div>
+
+  <!-- 100vh Showcase Intro Section -->
+  <section class="work-intro-section">
+    <div class="container">
+      <h1 class="work-intro-title">
+        디자인과 코드로 구현한<br>
+        <span style="color: var(--palette-accent-green);">프로젝트 쇼케이스</span>
+      </h1>
+      <p style="font-size: var(--lg-size); color: var(--theme-surface-on-surface-variant); max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        사용성과 심미성의 완벽한 조화를 목표로 제작한 다양한 프로젝트를 소개합니다.
+      </p>
+    </div>
+    <div class="work-scroll-indicator">
+      <span>Scroll Down</span>
+      <img src="img/arrow_downward.svg" alt="Scroll Down" style="width: 20px; height: 20px; opacity: 0.8;">
+    </div>
+  </section>
+
+  <!-- Full-Width Design Artworks Video Showcase -->
+  <section id="project-artworks" class="artworks-video-section">
+    <div class="artworks-video-wrapper">
+      <video src="video/main.mp4" autoplay loop muted playsinline class="artworks-bg-video"></video>
+      <div class="artworks-video-overlay"></div>
+      <div class="artworks-video-content">
+        <h3 class="artworks-video-title">Design Artworks 모음전</h3>
+        <p class="artworks-video-desc">
+          감각적인 모션 그래픽과 3D 영상, 2D 디자인 편집 작업물이 조화롭게 담긴 시각 디자인 포트폴리오 사이트입니다.
+        </p>
+        <a href="https://m1nseokartworks.vercel.app/" target="_blank" class="btn btn-primary artworks-visit-btn">
+          사이트 방문
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section: Swipe Carousel -->
+  <section id="work-showcase" class="projects-section py-section">
+    <div class="container">
+      
+      <!-- Swipe Carousel Track -->
+      <div class="swipe-carousel-container">
+        <div class="swipe-carousel-track" id="swipe-track">
+          
+          <div class="swipe-card active" data-index="0"
+               data-tag="Next.js & Design"
+               data-title="Mazda RX-7 자동차 소개 사이트"
+               data-desc="Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다."
+               data-url="https://mazda-rx-7.vercel.app">
+            <div class="swipe-card-media-wrapper">
+              <img src="img/p_01.png" alt="Mazda RX-7" class="swipe-card-img">
+              <div class="swipe-hover-overlay">
+                <div class="swipe-hover-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swipe-card" data-index="1"
+               data-tag="Vue.js & UX Design"
+               data-title="Styles 가구 판매 쇼핑몰"
+               data-desc="Vue.js 기반 가구 이커머스 플랫폼. 모던하고 편안한 인테리어 브라우징 UX를 설계했습니다."
+               data-url="https://m1nseokshin.github.io/Styles">
+            <div class="swipe-card-media-wrapper">
+              <img src="img/p_02.png" alt="Styles Furniture" class="swipe-card-img">
+              <div class="swipe-hover-overlay">
+                <div class="swipe-hover-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swipe-card" data-index="2"
+               data-tag="TypeScript & Next.js"
+               data-title="대구도시철도 검색 사이트"
+               data-desc="Next.js와 TypeScript로 구현한 경량 검색 웹 서비스. 타이핑 즉시 결과가 노출되는 실시간 필터링을 지원합니다."
+               data-url="https://daegusubway.vercel.app/">
+            <div class="swipe-card-media-wrapper">
+              <img src="img/p_03.png" alt="대구도시철도" class="swipe-card-img">
+              <div class="swipe-hover-overlay">
+                <div class="swipe-hover-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swipe-card" data-index="3"
+               data-tag="Web Design & Frontend Development"
+               data-title="대구가톨릭대학교 2023년 2학기 과제전 사이트"
+               data-desc="대구가톨릭대학교 디지털디자인과 2023년 2학기 온라인 과제전 웹사이트. 해당 프로젝트의 웹 디자인 및 전체 프론트엔드 개발을 단독 담당하였습니다."
+               data-url="http://dxd.cu.ac.kr/showcase232/">
+            <div class="swipe-card-media-wrapper">
+              <img src="img/p_04.png" alt="대구가톨릭대학교 2023 과제전" class="swipe-card-img">
+              <div class="swipe-hover-overlay">
+                <div class="swipe-hover-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="swipe-nav">
+          <button class="swipe-nav-btn" id="swipe-prev" aria-label="이전">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="swipe-nav-btn" id="swipe-next" aria-label="다음">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Info Panel (below carousel, changes on active slide) -->
+      <div class="swipe-info-panel" id="swipe-info-panel">
+        <span class="swipe-info-tag" id="swipe-info-tag">Next.js & Design</span>
+        <h3 class="swipe-info-title" id="swipe-info-title">Mazda RX-7 자동차 소개 사이트</h3>
+        <p class="swipe-info-desc" id="swipe-info-desc">
+          Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다.
+        </p>
+        <a href="https://mazda-rx-7.vercel.app" target="_blank" class="btn btn-primary swipe-visit-link" id="swipe-visit-btn">사이트 방문</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Antigravity Premium Footer Section -->
+  <footer class="footer-section scroll-expand">
+    <div class="container">
+      <div class="footer-grid-wrapper">
+        <div class="footer-brand-column">
+          <h3 class="footer-headline">Enjoy Technology!</h3>
+        </div>
+        <div class="footer-links-columns">
+          <div>
+            <h4 class="footer-col-title">Site Map</h4>
+            <div class="footer-links-column">
+              <a href="index.html" class="footer-link">홈 (Home)</a>
+              <a href="about.html" class="footer-link">소개 (About)</a>
+              <a href="work.html" class="footer-link">작업 (Work)</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-links-column">
+              <a href="mailto:m1nseokdesign@gmail.com" class="footer-link">m1nseokdesign@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-giant-brand">
+        MINSEOK SHIN
+      </div>
+      
+      <div class="footer-bottom-bar">
+        <div class="footer-logo-small">MINSEOK SHIN</div>
+        <div class="footer-bottom-links">
+          <span class="footer-copyright-text">© 2026 Minseok Shin. All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+</html>
