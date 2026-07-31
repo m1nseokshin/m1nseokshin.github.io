@@ -119,7 +119,7 @@ export default function Header() {
           Minseok Shin
         </Link>
         
-        <nav className="nav-links" suppressHydrationWarning>
+        <nav className="nav-links ml-12 lg:ml-20" suppressHydrationWarning>
           <div 
             className={`nav-link-tab cursor-pointer py-2.5 px-5 rounded-full text-sm font-medium flex items-center gap-1.5 transition-all ${activeDrawer === "about" ? "bg-slate-100/80 text-emerald-500 font-semibold" : "text-slate-600 hover:bg-slate-50"}`}
             onMouseEnter={() => handleMouseEnter("about")}
@@ -156,7 +156,7 @@ export default function Header() {
           </div>
         </nav>
         
-        <div className="flex items-center gap-3.5 ml-auto mr-0">
+        <div className="flex items-center gap-3.5 ml-auto mr-4 md:mr-0">
           {/* Language Toggle Button */}
           <button
             onClick={toggleLang}
@@ -184,7 +184,7 @@ export default function Header() {
         </div>
         
         <button 
-          className={`mobile-menu-btn flex flex-col justify-center items-center gap-1.5 w-8 h-8 relative z-[1001]`} 
+          className={`mobile-menu-btn ml-3 flex flex-col justify-center items-center gap-1.5 w-8 h-8 relative z-[1001]`} 
           aria-label="메뉴 열기"
           onClick={() => setMobileOpen(!mobileOpen)}
           suppressHydrationWarning

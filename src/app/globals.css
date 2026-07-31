@@ -319,6 +319,7 @@ html, body {
   gap: 32px;
   height: 100%;
   align-items: center;
+  margin-left: 48px;
 }
 
 .nav-link {
