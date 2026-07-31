@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full antialiased scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <Header />
-        <div className="flex-grow pt-[64px]">
-          {children}
-        </div>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <div className="flex-grow pt-[64px]">
+            {children}
+          </div>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

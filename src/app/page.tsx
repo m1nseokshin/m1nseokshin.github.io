@@ -9,7 +9,10 @@ import { MailIcon, InstagramIcon, GithubIcon } from "@/components/Footer";
 
 import { useRouter } from "next/navigation";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function HomePage() {
+  const { lang } = useLanguage();
   const [showSubContent, setShowSubContent] = useState(false);
   const router = useRouter();
 
@@ -64,9 +67,10 @@ export default function HomePage() {
           </div>
           
           <TypingTitle 
-            part1="디자인과 개발의 \n"
-            part2={typeof window !== "undefined" && window.innerWidth < 640 ? "경계를 허물어\n" : "경계를 허물어"}
-            part3=" 가치를 만듭니다."
+            key={lang}
+            part1={lang === "ko" ? "디자인과 개발의 \n" : "Bridging design & \n"}
+            part2={lang === "ko" ? (typeof window !== "undefined" && window.innerWidth < 640 ? "경계를 허물어\n" : "경계를 허물어") : "code to craft\n"}
+            part3={lang === "ko" ? " 가치를 만듭니다." : " meaningful value."}
             onComplete={() => setShowSubContent(true)}
           />
 
@@ -83,7 +87,7 @@ export default function HomePage() {
               className="btn btn-primary"
               onClick={handlePhilosophyClick}
             >
-              자세히 알아보기
+              {lang === "ko" ? "자세히 알아보기" : "Learn More"}
             </Link>
           </div>
         </div>
@@ -96,14 +100,25 @@ export default function HomePage() {
           <div className="philosophy-layout">
             <div className="philosophy-left">
               <h2 className="philosophy-main-text">
-                디자인과 개발의 경계를 허물어<br />
-                웹에서 완벽한 가치를 만듭니다.
+                {lang === "ko" ? (
+                  <>
+                    디자인과 개발의 경계를 허물어<br />
+                    웹에서 완벽한 가치를 만듭니다.
+                  </>
+                ) : (
+                  <>
+                    Breaking boundaries between design & code<br />
+                    to craft meaningful value on the web.
+                  </>
+                )}
               </h2>
             </div>
             
             <div className="philosophy-right">
               <p className="philosophy-desc-text">
-                디자인의 감성적 가치와 개발의 논리적인 프로세스의 접점에서 최상의 사용자 경험이 탄생한다고 생각합니다. 정적인 웹사이트가 아닌 생동감 있는 인터랙티브 웹을 지향하며, 완성도 높은 개발 역량을 목표로 합니다.
+                {lang === "ko"
+                  ? "디자인의 감성적 가치와 개발의 논리적인 프로세스의 접점에서 최상의 사용자 경험이 탄생한다고 생각합니다. 정적인 웹사이트가 아닌 생동감 있는 인터랙티브 웹을 지향하며, 완성도 높은 개발 역량을 목표로 합니다."
+                  : "I believe optimal user experiences are created at the intersection of aesthetic design values and logical development processes. I strive for dynamic interactive web solutions beyond static sites, aiming for craftsmanship in development."}
               </p>
             </div>
           </div>
@@ -116,9 +131,13 @@ export default function HomePage() {
           <div className="container">
             <div className="section-header text-center mb-0">
               <p className="section-label">Get in Touch</p>
-              <h2 className="section-title mb-6">협업 문의 및 연락처</h2>
+              <h2 className="section-title mb-6">
+                {lang === "ko" ? "협업 문의 및 연락처" : "Contact & Collaboration"}
+              </h2>
               <p className="hero-subtitle text-lg max-w-[600px] mx-auto mb-10" style={{ color: "var(--theme-surface-on-surface-variant)" }}>
-                협업이나 기타 문의사항은 자유롭게 아래로 연락 부탁드립니다.
+                {lang === "ko"
+                  ? "협업이나 기타 문의사항은 자유롭게 아래로 연락 부탁드립니다."
+                  : "Feel free to reach out anytime for collaboration or project inquiries."}
               </p>
               
               <div className="flex justify-center gap-6 flex-wrap">

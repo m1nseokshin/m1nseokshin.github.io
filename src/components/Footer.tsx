@@ -53,9 +53,13 @@ export const GithubIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Footer() {
+  const { lang } = useLanguage();
+
   return (
-    <footer className="footer-section scroll-expand" suppressHydrationWarning>
+    <footer className="footer-container" id="contact">
       <div className="container">
         
         {/* Desktop Footer Style (Back to 'enjoy technology' era) */}
@@ -68,9 +72,9 @@ export default function Footer() {
               <div>
                 <h4 className="footer-col-title">Site Map</h4>
                 <div className="footer-links-column">
-                  <Link href="/" className="footer-link">홈 (Home)</Link>
-                  <Link href="/about" className="footer-link">소개 (About)</Link>
-                  <Link href="/work" className="footer-link">작업 (Work)</Link>
+                  <Link href="/" className="footer-link">{lang === "ko" ? "홈 (Home)" : "Home"}</Link>
+                  <Link href="/about" className="footer-link">{lang === "ko" ? "소개 (About)" : "About"}</Link>
+                  <Link href="/work" className="footer-link">{lang === "ko" ? "작업 (Work)" : "Work"}</Link>
                 </div>
               </div>
               <div>
@@ -112,9 +116,9 @@ export default function Footer() {
             <div className="flex flex-row items-center gap-8 border-b border-gray-100/60 pb-4">
               <h4 className="footer-col-title min-w-[90px] mb-0! pb-0! shrink-0">Site Map</h4>
               <div className="flex flex-row items-center gap-6">
-                <Link href="/" className="footer-link">홈</Link>
-                <Link href="/about" className="footer-link">소개</Link>
-                <Link href="/work" className="footer-link">작업</Link>
+                <Link href="/" className="footer-link">{lang === "ko" ? "홈" : "Home"}</Link>
+                <Link href="/about" className="footer-link">{lang === "ko" ? "소개" : "About"}</Link>
+                <Link href="/work" className="footer-link">{lang === "ko" ? "작업" : "Work"}</Link>
               </div>
             </div>
 

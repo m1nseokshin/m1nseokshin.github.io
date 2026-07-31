@@ -10,11 +10,15 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 interface Project {
   index: number;
   tag: string;
-  title: string;
-  desc: string;
+  titleKo: string;
+  titleEn: string;
+  descKo: string;
+  descEn: string;
   url: string;
   img: string;
 }
@@ -23,53 +27,67 @@ const PROJECTS: Project[] = [
   {
     index: 0,
     tag: "Next.js & Design",
-    title: "Mazda RX-7 자동차 소개 사이트",
-    desc: "Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다.",
+    titleKo: "Mazda RX-7 자동차 소개 사이트",
+    titleEn: "Mazda RX-7 Car Showcase Site",
+    descKo: "Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다.",
+    descEn: "Next.js based RX-7 sports car website combining physics engine effects and scroll graphics for an interactive visual experience.",
     url: "https://mazda-rx-7.vercel.app",
     img: "/img/p_01.png",
   },
   {
     index: 1,
     tag: "Vue.js & UX Design",
-    title: "Styles 가구 판매 쇼핑몰",
-    desc: "Vue.js 기반 가구 이커머스 플랫폼. 모던하고 편안한 인테리어 브라우징 UX를 설계했습니다.",
+    titleKo: "Styles 가구 판매 쇼핑몰",
+    titleEn: "Styles Furniture E-commerce",
+    descKo: "Vue.js 기반 가구 이커머스 플랫폼. 모던하고 편안한 인테리어 브라우징 UX를 설계했습니다.",
+    descEn: "Vue.js based furniture e-commerce platform designed for modern and intuitive interior browsing UX.",
     url: "https://m1nseokshin.github.io/Styles",
     img: "/img/p_02.png",
   },
   {
     index: 2,
     tag: "TypeScript & Next.js",
-    title: "대구도시철도 검색 사이트",
-    desc: "Next.js와 TypeScript로 구현한 경량 검색 웹 서비스. 타이핑 즉시 결과가 노출되는 실시간 필터링을 지원합니다.",
+    titleKo: "대구도시철도 검색 사이트",
+    titleEn: "Daegu Subway Search Web App",
+    descKo: "Next.js와 TypeScript로 구현한 경량 검색 웹 서비스. 타이핑 즉시 결과가 노출되는 실시간 필터링을 지원합니다.",
+    descEn: "Lightweight search service built with Next.js and TypeScript, supporting real-time instant filtering.",
     url: "https://daegusubway.vercel.app/",
     img: "/img/p_03.png",
   },
   {
     index: 3,
     tag: "Web Design & Frontend Development",
-    title: "대구가톨릭대학교 2023년 2학기 과제전 사이트",
-    desc: "대구가톨릭대학교 디지털디자인과 2023년 2학기 온라인 과제전 웹사이트. 해당 프로젝트의 웹 디자인 및 전체 프론트엔드 개발을 단독 담당하였습니다.",
+    titleKo: "대구가톨릭대학교 2023년 2학기 과제전 사이트",
+    titleEn: "Daegu Catholic Univ 2023 Showcase",
+    descKo: "대구가톨릭대학교 디지털디자인과 2023년 2학기 온라인 과제전 웹사이트. 해당 프로젝트의 웹 디자인 및 전체 프론트엔드 개발을 단독 담당하였습니다.",
+    descEn: "Online showcase site for 2023 Fall Semester at DCU Digital Design Department. Solely handled web design and full frontend development.",
     url: "http://dxd.cu.ac.kr/showcase232/",
     img: "/img/p_04.png",
   },
 ];
 
 export default function SwipeCarousel() {
+  const { lang } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  // Transition state for info panel
-  const [info, setInfo] = useState(PROJECTS[0]);
+  // Smooth fade transition for info block text
   const [infoFade, setInfoFade] = useState(true);
 
+  const activeProject = PROJECTS[activeIndex];
+  const info = {
+    tag: activeProject.tag,
+    title: lang === "ko" ? activeProject.titleKo : activeProject.titleEn,
+    desc: lang === "ko" ? activeProject.descKo : activeProject.descEn,
+    url: activeProject.url,
+  };
+
   const handleSlideChange = (swiper: SwiperType) => {
-    const nextIndex = swiper.activeIndex;
-    setActiveIndex(nextIndex);
     setInfoFade(false);
     setTimeout(() => {
-      setInfo(PROJECTS[nextIndex]);
+      setActiveIndex(swiper.activeIndex);
       setInfoFade(true);
-    }, 250);
+    }, 150);
   };
 
   const handlePrev = () => {
@@ -128,7 +146,7 @@ export default function SwipeCarousel() {
                 <div className="swipe-card-media-wrapper relative w-full h-[43vh] max-lg:h-[50vw] max-sm:h-[38vw] overflow-hidden rounded-2xl">
                   <Image
                     src={project.img}
-                    alt={project.title}
+                    alt={lang === "ko" ? project.titleKo : project.titleEn}
                     fill
                     unoptimized
                     quality={100}
@@ -138,7 +156,7 @@ export default function SwipeCarousel() {
                   />
                   {idx === activeIndex && (
                     <div className="max-lg:hidden">
-                      <ActiveCardFollower projectUrl={project.url} />
+                      <ActiveCardFollower projectUrl={project.url} lang={lang} />
                     </div>
                   )}
                 </div>
@@ -177,7 +195,7 @@ export default function SwipeCarousel() {
             rel="noopener noreferrer"
             className="lg:hidden inline-flex items-center gap-1 text-sm font-semibold text-slate-900 mt-3"
           >
-            사이트 방문
+            {lang === "ko" ? "사이트 방문" : "Visit Site"}
             <svg
               width="14" height="14"
               viewBox="0 0 24 24" fill="none"
@@ -198,7 +216,7 @@ export default function SwipeCarousel() {
               flex items-center justify-center cursor-pointer
               transition-all duration-300 hover:bg-gray-50
               disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="이전"
+            aria-label={lang === "ko" ? "이전" : "Previous"}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -211,7 +229,7 @@ export default function SwipeCarousel() {
               flex items-center justify-center cursor-pointer
               transition-all duration-300 hover:bg-gray-50
               disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="다음"
+            aria-label={lang === "ko" ? "다음" : "Next"}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 6 15 12 9 18" />
@@ -224,7 +242,7 @@ export default function SwipeCarousel() {
 }
 
 // ── ActiveCardFollower (desktop cursor pill) ──
-function ActiveCardFollower({ projectUrl }: { projectUrl: string }) {
+function ActiveCardFollower({ projectUrl, lang }: { projectUrl: string; lang: "ko" | "en" }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -266,7 +284,9 @@ function ActiveCardFollower({ projectUrl }: { projectUrl: string }) {
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
-          <span className="text-xs font-semibold whitespace-nowrap">사이트 방문</span>
+          <span className="text-xs font-semibold whitespace-nowrap">
+            {lang === "ko" ? "사이트 방문" : "Visit Site"}
+          </span>
         </div>
       )}
     </div>
