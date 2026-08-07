@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function HeroCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
+  const mouseRef = useRef({ x: -1000, y: -1000, targetX: -1000, targetY: -1000 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,7 +21,7 @@ export default function HeroCanvas() {
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
-    const spacing = 45;
+    const spacing = 40;
     let points: Point[][] = [];
 
     class Point {
@@ -38,22 +38,22 @@ export default function HeroCanvas() {
       }
 
       update(mousePos: { x: number; y: number }) {
-        const time = Date.now() * 0.0012;
-        const waveX = Math.sin(time + this.baseX * 0.008) * 12;
-        const waveY = Math.cos(time + this.baseY * 0.008) * 12;
+        const time = Date.now() * 0.0015;
+        const waveX = Math.sin(time + this.baseX * 0.006) * 6;
+        const waveY = Math.cos(time + this.baseY * 0.006) * 6;
         const animBaseX = this.baseX + waveX;
         const animBaseY = this.baseY + waveY;
 
         const dx = mousePos.x - this.x;
         const dy = mousePos.y - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const radius = 230; // 130% larger warping radius
+        const radius = 280;
 
         if (dist < radius) {
           const force = (radius - dist) / radius;
           const angle = Math.atan2(dy, dx);
-          const targetX = animBaseX - Math.cos(angle) * force * 45;
-          const targetY = animBaseY - Math.sin(angle) * force * 45;
+          const targetX = animBaseX - Math.cos(angle) * force * 35;
+          const targetY = animBaseY - Math.sin(angle) * force * 35;
 
           this.x += (targetX - this.x) * 0.15;
           this.y += (targetY - this.y) * 0.15;
@@ -66,13 +66,13 @@ export default function HeroCanvas() {
 
     const initGrid = () => {
       points = [];
-      const cols = Math.floor(width / spacing) + 2;
-      const rows = Math.floor(height / spacing) + 2;
+      const cols = Math.floor(width / spacing) + 3;
+      const rows = Math.floor(height / spacing) + 3;
 
       for (let c = 0; c < cols; c++) {
         points[c] = [];
         for (let r = 0; r < rows; r++) {
-          points[c].push(new Point(c * spacing - 10, r * spacing - 10));
+          points[c].push(new Point(c * spacing - 20, r * spacing - 20));
         }
       }
     };
@@ -89,70 +89,98 @@ export default function HeroCanvas() {
 
     let animationFrameId: number;
 
-    const drawMesh = () => {
+    const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Update points using direct ref values (no state rebuild trigger)
-      const currentMouse = mouseRef.current;
+      // Smooth mouse interpolation
+      const mouse = mouseRef.current;
+      mouse.x += (mouse.targetX - mouse.x) * 0.1;
+      mouse.y += (mouse.targetY - mouse.y) * 0.1;
+
+      // Update points
       for (let c = 0; c < points.length; c++) {
         for (let r = 0; r < points[c].length; r++) {
-          points[c][r].update(currentMouse);
+          points[c][r].update(mouse);
         }
       }
 
-      ctx.strokeStyle = "rgba(3, 199, 90, 0.12)";
-      ctx.lineWidth = 1;
+      const spotlightRadius = 320;
 
+      // Render horizontal & vertical lines near mouse with smooth fade
       for (let c = 0; c < points.length; c++) {
         for (let r = 0; r < points[c].length; r++) {
           const pt = points[c][r];
 
+          // Horizontal segment
           if (c < points.length - 1) {
             const nextPt = points[c + 1][r];
-            ctx.beginPath();
-            ctx.moveTo(pt.x, pt.y);
-            ctx.lineTo(nextPt.x, nextPt.y);
-            ctx.stroke();
+            const midX = (pt.x + nextPt.x) / 2;
+            const midY = (pt.y + nextPt.y) / 2;
+            const dist = Math.hypot(midX - mouse.x, midY - mouse.y);
+
+            if (dist < spotlightRadius) {
+              const alpha = Math.pow(1 - dist / spotlightRadius, 1.8);
+              ctx.strokeStyle = `rgba(16, 185, 129, ${alpha * 0.55})`;
+              ctx.lineWidth = 1 + alpha * 1.6;
+              ctx.beginPath();
+              ctx.moveTo(pt.x, pt.y);
+              ctx.lineTo(nextPt.x, nextPt.y);
+              ctx.stroke();
+            }
           }
 
+          // Vertical segment
           if (r < points[c].length - 1) {
             const nextPt = points[c][r + 1];
-            ctx.beginPath();
-            ctx.moveTo(pt.x, pt.y);
-            ctx.lineTo(nextPt.x, nextPt.y);
-            ctx.stroke();
+            const midX = (pt.x + nextPt.x) / 2;
+            const midY = (pt.y + nextPt.y) / 2;
+            const dist = Math.hypot(midX - mouse.x, midY - mouse.y);
+
+            if (dist < spotlightRadius) {
+              const alpha = Math.pow(1 - dist / spotlightRadius, 1.8);
+              ctx.strokeStyle = `rgba(16, 185, 129, ${alpha * 0.55})`;
+              ctx.lineWidth = 1 + alpha * 1.6;
+              ctx.beginPath();
+              ctx.moveTo(pt.x, pt.y);
+              ctx.lineTo(nextPt.x, nextPt.y);
+              ctx.stroke();
+            }
           }
 
-          ctx.fillStyle = "rgba(3, 199, 90, 0.35)";
-          ctx.beginPath();
-          ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
-          ctx.fill();
+          // Vertex dots near mouse
+          const ptDist = Math.hypot(pt.x - mouse.x, pt.y - mouse.y);
+          if (ptDist < spotlightRadius) {
+            const alpha = Math.pow(1 - ptDist / spotlightRadius, 2);
+            ctx.fillStyle = `rgba(16, 185, 129, ${alpha * 0.85})`;
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 1.5 + alpha * 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
       }
 
-      animationFrameId = requestAnimationFrame(drawMesh);
+      animationFrameId = requestAnimationFrame(render);
     };
 
-    drawMesh();
+    render();
 
     return () => {
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []); // Re-run 0 times!
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
-    mouseRef.current = {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    };
+    mouseRef.current.targetX = e.clientX - rect.left;
+    mouseRef.current.targetY = e.clientY - rect.top;
   };
 
   const handleMouseLeave = () => {
-    mouseRef.current = { x: -1000, y: -1000 };
+    mouseRef.current.targetX = -1000;
+    mouseRef.current.targetY = -1000;
   };
 
   return (

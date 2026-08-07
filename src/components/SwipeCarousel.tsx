@@ -26,6 +26,16 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     index: 0,
+    tag: "Three.js & 3D Web",
+    titleKo: "Solar System 3D 태양계 탐험 사이트",
+    titleEn: "Solar System 3D Interactive Explorer",
+    descKo: "천문학적 계산을 바탕으로 재현한 3D 태양계 탐험 웹사이트. Three.js와 인터랙티브 그래픽 기술로 우주 공간을 몰입감 있게 탐색할 수 있습니다.",
+    descEn: "Interactive 3D solar system recreated with real astronomical calculations, offering an immersive cosmic exploration powered by Three.js.",
+    url: "https://solarsystem-tawny-eight.vercel.app/",
+    img: "/img/p_solar.png",
+  },
+  {
+    index: 1,
     tag: "Next.js & Design",
     titleKo: "Mazda RX-7 자동차 소개 사이트",
     titleEn: "Mazda RX-7 Car Showcase Site",
@@ -35,7 +45,7 @@ const PROJECTS: Project[] = [
     img: "/img/p_01.png",
   },
   {
-    index: 1,
+    index: 2,
     tag: "Vue.js & UX Design",
     titleKo: "Styles 가구 판매 쇼핑몰",
     titleEn: "Styles Furniture E-commerce",
@@ -45,7 +55,7 @@ const PROJECTS: Project[] = [
     img: "/img/p_02.png",
   },
   {
-    index: 2,
+    index: 3,
     tag: "TypeScript & Next.js",
     titleKo: "대구도시철도 검색 사이트",
     titleEn: "Daegu Subway Search Web App",
@@ -55,7 +65,7 @@ const PROJECTS: Project[] = [
     img: "/img/p_03.png",
   },
   {
-    index: 3,
+    index: 4,
     tag: "Web Design & Frontend Development",
     titleKo: "대구가톨릭대학교 2023년 2학기 과제전 사이트",
     titleEn: "Daegu Catholic Univ 2023 Showcase",

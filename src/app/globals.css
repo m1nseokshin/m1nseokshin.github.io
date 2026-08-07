@@ -873,6 +873,11 @@ html, body {
   color: var(--theme-surface-on-surface-variant);
 }
 
+.about-right-column {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .profile-image-card {
   background-color: var(--theme-surface-surface);
   border-radius: 32px;
@@ -885,6 +890,7 @@ html, body {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s var(--ease-out-back);
+  margin-left: auto;
 }
 .profile-image-card:hover {
   transform: translateY(-4px);

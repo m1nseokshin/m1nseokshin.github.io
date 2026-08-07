@@ -88,8 +88,8 @@ export default function AboutPage() {
             </div>
             
             {/* Right: Profile Image Card */}
-            <div className="about-right-column">
-              <div className="profile-image-card">
+            <div className="about-right-column flex justify-end max-lg:justify-center">
+              <div className="profile-image-card ml-auto max-lg:ml-0">
                 <Image 
                   src="/img/profile.png" 
                   alt={lang === "ko" ? "신민석 프로필" : "Minseok Shin Profile"}
