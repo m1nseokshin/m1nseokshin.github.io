@@ -228,7 +228,7 @@ export default function Header() {
                   {lang === "ko" ? "소개" : "About"}
                 </Link>
                 
-                <div className="flex flex-col gap-4 border-t border-slate-100/60 pt-4" suppressHydrationWarning>
+                <div className="flex flex-col gap-3.5 border-t border-slate-100/60 pt-4" suppressHydrationWarning>
                   <Link href="/about#profile" className="group block" onClick={closeDrawer} suppressHydrationWarning>
                     <h5 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-500 transition-colors" suppressHydrationWarning>
                       {lang === "ko" ? "인사말 & 포부" : "Greeting & Aspirations"}
@@ -237,6 +237,16 @@ export default function Header() {
                   <Link href="/about#experience" className="group block" onClick={closeDrawer} suppressHydrationWarning>
                     <h5 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-500 transition-colors" suppressHydrationWarning>
                       {lang === "ko" ? "활동 및 경험" : "Activities & Experience"}
+                    </h5>
+                  </Link>
+                  <Link href="/about#awards" className="group block" onClick={closeDrawer} suppressHydrationWarning>
+                    <h5 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-500 transition-colors" suppressHydrationWarning>
+                      {lang === "ko" ? "수상 이력" : "Awards & Honors"}
+                    </h5>
+                  </Link>
+                  <Link href="/about#certificates" className="group block" onClick={closeDrawer} suppressHydrationWarning>
+                    <h5 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-500 transition-colors" suppressHydrationWarning>
+                      {lang === "ko" ? "수료 및 자격" : "Certifications & Training"}
                     </h5>
                   </Link>
                   <Link href="/about#skills" className="group block" onClick={closeDrawer} suppressHydrationWarning>
@@ -312,7 +322,7 @@ export default function Header() {
             </svg>
           </button>
           
-          <div className={`flex flex-col gap-4 pl-3 pt-2 pb-1 overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`} suppressHydrationWarning>
+          <div className={`flex flex-col gap-3.5 pl-3 pt-2 pb-1 overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}`} suppressHydrationWarning>
             <Link href="/about" className="text-sm font-semibold text-emerald-500" onClick={closeMobileMenu}>
               {lang === "ko" ? "전체보기" : "View All"}
             </Link>
@@ -321,6 +331,12 @@ export default function Header() {
             </Link>
             <Link href="/about#experience" className="text-sm text-slate-600" onClick={closeMobileMenu}>
               {lang === "ko" ? "활동 및 경험" : "Activities & Experience"}
+            </Link>
+            <Link href="/about#awards" className="text-sm text-slate-600" onClick={closeMobileMenu}>
+              {lang === "ko" ? "수상 이력" : "Awards & Honors"}
+            </Link>
+            <Link href="/about#certificates" className="text-sm text-slate-600" onClick={closeMobileMenu}>
+              {lang === "ko" ? "수료 및 자격" : "Certifications & Training"}
             </Link>
             <Link href="/about#skills" className="text-sm text-slate-600" onClick={closeMobileMenu}>
               {lang === "ko" ? "기술 스택" : "Tech Stack"}

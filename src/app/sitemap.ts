@@ -3,13 +3,13 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://portfolio-2026.vercel.app"; // Default domain placeholder
+  const baseUrl = "https://m1nseokshin.github.io";
 
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1.0,
     },
     {

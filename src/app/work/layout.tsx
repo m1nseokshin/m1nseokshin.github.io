@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "작업 Work | Minseok Shin",
-  description: "디자인과 프론트엔드 코드로 완성도 높게 구현한 Mazda RX-7 소개 사이트, Styles 이커머스 등 다양한 프로젝트 쇼케이스를 확인하실 수 있습니다.",
+  title: "Work & Projects | Minseok Shin",
+  description: "2026 KDM+ 우수상 수상작 Rally(XR 스포츠), Three.js 3D Solar System, Next.js 및 디자인 아트워크 프로젝트 쇼케이스.",
   openGraph: {
-    title: "작업 Work | Minseok Shin",
-    description: "디자인 및 프론트엔드 개발을 융합하여 구축한 프로젝트 쇼케이스 목록입니다.",
-    type: "website",
+    title: "Work & Projects | Minseok Shin",
+    description: "2026 KDM+ 우수상 수상작 Rally(XR 스포츠), Three.js 3D Solar System, Next.js 및 디자인 아트워크 프로젝트 쇼케이스.",
+    url: "https://m1nseokshin.github.io/work",
+  },
+  alternates: {
+    canonical: "/work",
   },
 };
 

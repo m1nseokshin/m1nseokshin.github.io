@@ -1,18 +1,21 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Keyboard, A11y } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/keyboard";
+import "swiper/css/a11y";
 
 import { useLanguage } from "@/context/LanguageContext";
+import defaultProjects from "@/data/projects.json";
 
-interface Project {
+export interface Project {
+  id?: string;
   index: number;
   tag: string;
   titleKo: string;
@@ -21,75 +24,52 @@ interface Project {
   descEn: string;
   url: string;
   img: string;
+  isAward?: boolean;
+  awardTextKo?: string;
+  awardTextEn?: string;
 }
-
-const PROJECTS: Project[] = [
-  {
-    index: 0,
-    tag: "Three.js & 3D Web",
-    titleKo: "Solar System 3D 태양계 탐험 사이트",
-    titleEn: "Solar System 3D Interactive Explorer",
-    descKo: "천문학적 계산을 바탕으로 재현한 3D 태양계 탐험 웹사이트. Three.js와 인터랙티브 그래픽 기술로 우주 공간을 몰입감 있게 탐색할 수 있습니다.",
-    descEn: "Interactive 3D solar system recreated with real astronomical calculations, offering an immersive cosmic exploration powered by Three.js.",
-    url: "https://solarsystem-tawny-eight.vercel.app/",
-    img: "/img/p_solar.png",
-  },
-  {
-    index: 1,
-    tag: "Next.js & Design",
-    titleKo: "Mazda RX-7 자동차 소개 사이트",
-    titleEn: "Mazda RX-7 Car Showcase Site",
-    descKo: "Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다.",
-    descEn: "Next.js based RX-7 sports car website combining physics engine effects and scroll graphics for an interactive visual experience.",
-    url: "https://mazda-rx-7.vercel.app",
-    img: "/img/p_01.png",
-  },
-  {
-    index: 2,
-    tag: "Vue.js & UX Design",
-    titleKo: "Styles 가구 판매 쇼핑몰",
-    titleEn: "Styles Furniture E-commerce",
-    descKo: "Vue.js 기반 가구 이커머스 플랫폼. 모던하고 편안한 인테리어 브라우징 UX를 설계했습니다.",
-    descEn: "Vue.js based furniture e-commerce platform designed for modern and intuitive interior browsing UX.",
-    url: "https://m1nseokshin.github.io/Styles",
-    img: "/img/p_02.png",
-  },
-  {
-    index: 3,
-    tag: "TypeScript & Next.js",
-    titleKo: "대구도시철도 검색 사이트",
-    titleEn: "Daegu Subway Search Web App",
-    descKo: "Next.js와 TypeScript로 구현한 경량 검색 웹 서비스. 타이핑 즉시 결과가 노출되는 실시간 필터링을 지원합니다.",
-    descEn: "Lightweight search service built with Next.js and TypeScript, supporting real-time instant filtering.",
-    url: "https://daegusubway.vercel.app/",
-    img: "/img/p_03.png",
-  },
-  {
-    index: 4,
-    tag: "Web Design & Frontend Development",
-    titleKo: "대구가톨릭대학교 2023년 2학기 과제전 사이트",
-    titleEn: "Daegu Catholic Univ 2023 Showcase",
-    descKo: "대구가톨릭대학교 디지털디자인과 2023년 2학기 온라인 과제전 웹사이트. 해당 프로젝트의 웹 디자인 및 전체 프론트엔드 개발을 단독 담당하였습니다.",
-    descEn: "Online showcase site for 2023 Fall Semester at DCU Digital Design Department. Solely handled web design and full frontend development.",
-    url: "http://dxd.cu.ac.kr/showcase232/",
-    img: "/img/p_04.png",
-  },
-];
 
 export default function SwipeCarousel() {
   const { lang } = useLanguage();
+  const [projects, setProjects] = useState<Project[]>(defaultProjects as Project[]);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Smooth fade transition for info block text
   const [infoFade, setInfoFade] = useState(true);
 
-  const activeProject = PROJECTS[activeIndex];
+  useEffect(() => {
+    // Fetch dynamic project list from API or localStorage
+    const fetchProjects = async () => {
+      try {
+        const local = localStorage.getItem("portfolio_projects");
+        if (local) {
+          setProjects(JSON.parse(local));
+        }
+
+        const res = await fetch("/api/projects");
+        const data = await res.json();
+        if (data.success && Array.isArray(data.data)) {
+          setProjects(data.data);
+          localStorage.setItem("portfolio_projects", JSON.stringify(data.data));
+        }
+      } catch (err) {
+        console.error("Failed to load projects from API, using fallback data", err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const activeProject = projects[activeIndex] || projects[0] || (defaultProjects[0] as Project);
+  
   const info = {
-    tag: activeProject.tag,
-    title: lang === "ko" ? activeProject.titleKo : activeProject.titleEn,
-    desc: lang === "ko" ? activeProject.descKo : activeProject.descEn,
-    url: activeProject.url,
+    tag: activeProject?.tag || "",
+    title: lang === "ko" ? activeProject?.titleKo : activeProject?.titleEn,
+    desc: lang === "ko" ? activeProject?.descKo : activeProject?.descEn,
+    url: activeProject?.url || "",
+    isAward: activeProject?.isAward,
+    awardText: lang === "ko" ? activeProject?.awardTextKo : activeProject?.awardTextEn,
   };
 
   const handleSlideChange = (swiper: SwiperType) => {
@@ -121,41 +101,40 @@ export default function SwipeCarousel() {
       {/* ── Swiper Slider ── */}
       <div className="swipe-carousel-container-outer overflow-hidden">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Keyboard, A11y]}
+          keyboard={{ enabled: true, onlyInViewport: true }}
+          a11y={{ prevSlideMessage: 'Previous project', nextSlideMessage: 'Next project' }}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
           onSlideChange={handleSlideChange}
           speed={500}
           grabCursor={true}
-          // Responsive params to mimic your desktop peek + mobile full-width design
           breakpoints={{
-            // Mobile & Tablet (< 1024px): Sized to show single card prominently with wider gap
             0: {
               slidesPerView: 1.06,
               spaceBetween: 28,
               centeredSlides: true,
             },
-            // Desktop (>= 1024px): 78% card width, showing peeking cards aligned to left margin
             1024: {
               slidesPerView: 1.25,
               spaceBetween: 24,
-              slidesOffsetBefore: 100, // Matches startOffsetPx (100px)
+              slidesOffsetBefore: 100,
               centeredSlides: false,
             },
           }}
           className="mySwiper w-full py-2"
         >
-          {PROJECTS.map((project, idx) => (
-            <SwiperSlide key={project.index} className="transition-all duration-500 w-full">
+          {projects.map((project, idx) => (
+            <SwiperSlide key={project.id || project.index || idx} className="transition-all duration-500 w-full">
               <div
                 onClick={() => handleCardClick(idx, project.url)}
-                className={`swipe-card w-full block rounded-2xl overflow-hidden border border-gray-100 transition-all duration-500 cursor-pointer
+                className={`swipe-card w-full block rounded-2xl overflow-hidden border border-gray-100 transition-all duration-500 cursor-pointer relative group
                   ${idx === activeIndex ? "opacity-100 scale-100 active" : "opacity-60 scale-[0.97]"}`}
               >
-                <div className="swipe-card-media-wrapper relative w-full h-[43vh] max-lg:h-[50vw] max-sm:h-[38vw] overflow-hidden rounded-2xl">
+                <div className="swipe-card-media-wrapper relative w-full h-[52vh] min-h-[400px] max-h-[600px] max-lg:h-[54vw] max-lg:min-h-[320px] max-sm:h-[65vw] max-sm:min-h-[260px] overflow-hidden rounded-2xl">
                   <Image
-                    src={project.img}
+                    src={project.img || "/img/p_01.png"}
                     alt={lang === "ko" ? project.titleKo : project.titleEn}
                     fill
                     unoptimized
@@ -164,6 +143,14 @@ export default function SwipeCarousel() {
                     style={{ filter: "brightness(0.97)" }}
                     priority={idx === 0}
                   />
+
+                  {/* Award Tag */}
+                  {project.isAward && (
+                    <div className="absolute top-5 left-5 z-20 px-3.5 py-1.5 rounded-lg bg-black/60 text-white backdrop-blur-md text-[11px] font-medium tracking-wider uppercase border border-white/10">
+                      {lang === "ko" ? (project.awardTextKo || "우수상") : (project.awardTextEn || "Excellence Award")}
+                    </div>
+                  )}
+
                   {idx === activeIndex && (
                     <div className="max-lg:hidden">
                       <ActiveCardFollower projectUrl={project.url} lang={lang} />
@@ -183,18 +170,28 @@ export default function SwipeCarousel() {
           className="transition-opacity duration-300"
           style={{ opacity: infoFade ? 1 : 0 }}
         >
-          {/* Tag — compact screens only */}
-          <p className="lg:hidden text-[11px] font-medium text-slate-400 tracking-wide mb-1.5 uppercase">
-            {info.tag}
-          </p>
+          {/* Tag & Award Info */}
+          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+            <p className="text-[11px] font-medium text-slate-400 tracking-wide uppercase">
+              {info.tag}
+            </p>
+            {info.isAward && (
+              <>
+                <span className="text-slate-300 text-xs">·</span>
+                <span className="text-[11px] font-semibold text-emerald-600 tracking-wider uppercase">
+                  {info.awardText || (lang === "ko" ? "우수상" : "Excellence Award")}
+                </span>
+              </>
+            )}
+          </div>
 
           {/* Title */}
-          <h3 className="text-[15px] font-semibold text-slate-900 mb-1.5 leading-snug">
+          <h3 className="text-[17px] font-semibold text-slate-900 mb-1.5 leading-snug">
             {info.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-gray-500 leading-normal max-w-[420px]">
+          <p className="text-sm text-gray-500 leading-normal max-w-[460px]">
             {info.desc}
           </p>
 
@@ -217,7 +214,7 @@ export default function SwipeCarousel() {
           </a>
         </div>
 
-        {/* Nav buttons — right side on desktop, centered below on compact */}
+        {/* Nav buttons */}
         <div className="flex gap-2 flex-shrink-0 lg:pt-0.5 max-lg:justify-center max-lg:mt-6">
           <button
             onClick={handlePrev}
@@ -234,7 +231,7 @@ export default function SwipeCarousel() {
           </button>
           <button
             onClick={handleNext}
-            disabled={activeIndex === PROJECTS.length - 1}
+            disabled={activeIndex === projects.length - 1}
             className="w-10 h-10 rounded-full border border-gray-200 bg-white text-slate-800
               flex items-center justify-center cursor-pointer
               transition-all duration-300 hover:bg-gray-50
@@ -271,17 +268,15 @@ function ActiveCardFollower({ projectUrl, lang }: { projectUrl: string; lang: "k
       onMouseLeave={() => setIsHovered(false)}
       className="absolute inset-0 z-10 w-full h-full cursor-none overflow-hidden"
     >
-      {/* Dim overlay */}
       <div
         className="absolute inset-0 bg-black/40 transition-opacity duration-300"
         style={{ opacity: isHovered ? 1 : 0 }}
       />
 
-      {/* Floating pill: arrow + label */}
       {isHovered && (
         <div
           className="pointer-events-none absolute rounded-full bg-white text-black
-            flex items-center gap-2 px-5 shadow-lg"
+            flex items-center gap-2 px-5 shadow-lg z-30"
           style={{
             left: mousePos.x,
             top: mousePos.y,

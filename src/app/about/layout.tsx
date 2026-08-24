@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "소개 About | Minseok Shin",
-  description: "디자인과 프론트엔드 개발의 조화를 탐구하는 예비 UX 디자이너 신민석의 프로필, 교육 경험 및 기술 스택 소개 페이지입니다.",
+  title: "About | Minseok Shin - UX Designer & Developer",
+  description: "부산대학교 디자인앤테크놀로지전공 신민석의 프로필, Spark Design Awards Gold Winner 수상 이력, Google Cloud 수료증 및 경험을 소개합니다.",
   openGraph: {
-    title: "소개 About | Minseok Shin",
-    description: "HCI 및 웹 기술을 연구하는 신민석의 커리어 프로필과 포부 페이지입니다.",
-    type: "website",
+    title: "About | Minseok Shin - UX Designer & Developer",
+    description: "부산대학교 디자인앤테크놀로지전공 신민석의 프로필, Spark Design Awards Gold Winner 수상 이력, Google Cloud 수료증 및 경험을 소개합니다.",
+    url: "https://m1nseokshin.github.io/about",
+  },
+  alternates: {
+    canonical: "/about",
   },
 };
 

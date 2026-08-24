@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const MailIcon = ({ size = 20 }: { size?: number }) => (
   <svg
@@ -55,6 +56,24 @@ export const GithubIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+export const LinkedInIcon = ({ size = 20 }: { size?: number }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -64,7 +83,7 @@ export default function Footer() {
     <footer className="footer-container" id="contact">
       <div className="container">
         
-        {/* Desktop Footer Style (Back to 'enjoy technology' era) */}
+        {/* Desktop Footer Style */}
         <div className="hidden md:block">
           <div className="footer-grid-wrapper">
             <div className="footer-brand-column">
@@ -82,13 +101,16 @@ export default function Footer() {
               <div>
                 <h4 className="footer-col-title">Contact</h4>
                 <div className="flex flex-row items-center gap-4 mt-2">
-                  <a href="mailto:m1nseokdesign@gmail.com" className="footer-link" aria-label="Email">
+                  <a href="mailto:m1nseokdesign@gmail.com" className="footer-link" aria-label="Email" title="Email">
                     <MailIcon size={20} />
                   </a>
-                  <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="Instagram">
+                  <a href="https://www.linkedin.com/in/m1nseokdesign/" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="LinkedIn" title="LinkedIn">
+                    <LinkedInIcon size={20} />
+                  </a>
+                  <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="Instagram" title="Instagram">
                     <InstagramIcon size={20} />
                   </a>
-                  <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="GitHub">
+                  <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="GitHub" title="GitHub">
                     <GithubIcon size={20} />
                   </a>
                 </div>
@@ -96,13 +118,21 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="footer-giant-brand">
-            MINSEOK SHIN
+          {/* Giant Signature Logo */}
+          <div className="footer-giant-brand flex justify-center items-center py-6 select-none my-8">
+            <Image
+              src="/img/logo_minseok_shin.png"
+              alt="Minseok Shin"
+              width={1977}
+              height={336}
+              className="w-full max-w-[950px] h-auto object-contain max-h-[160px] opacity-90 transition-opacity hover:opacity-100"
+              priority
+            />
           </div>
           
           <div className="footer-bottom-bar">
             <div className="footer-logo-small">Minseok Shin</div>
-            <div className="footer-bottom-links">
+            <div className="footer-bottom-links flex items-center gap-4">
               <span className="footer-copyright-text">
                 © 2026 Minseok Shin. All Rights Reserved.
               </span>
@@ -110,11 +140,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Mobile Footer Style (Keep current style) */}
+        {/* Mobile Footer Style */}
         <div className="block md:hidden">
           <div className="flex flex-col gap-6 mb-12">
             
-            {/* Site Map Row - always horizontal */}
+            {/* Site Map Row */}
             <div className="flex flex-row items-center gap-8 border-b border-gray-100/60 pb-4">
               <h4 className="footer-col-title min-w-[90px] mb-0! pb-0! shrink-0">Site Map</h4>
               <div className="flex flex-row items-center gap-6">
@@ -124,17 +154,20 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Contact Row - always horizontal with word wrapping for email */}
+            {/* Contact Row */}
             <div className="flex flex-row items-center gap-8 pb-4">
               <h4 className="footer-col-title min-w-[90px] mb-0! pb-0! shrink-0">Contact</h4>
               <div className="flex flex-row items-center gap-4">
-                <a href="mailto:m1nseokdesign@gmail.com" className="footer-link" aria-label="Email">
+                <a href="mailto:m1nseokdesign@gmail.com" className="footer-link" aria-label="Email" title="Email">
                   <MailIcon size={20} />
                 </a>
-                <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="Instagram">
+                <a href="https://www.linkedin.com/in/m1nseokdesign/" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="LinkedIn" title="LinkedIn">
+                  <LinkedInIcon size={20} />
+                </a>
+                <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="Instagram" title="Instagram">
                   <InstagramIcon size={20} />
                 </a>
-                <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="GitHub">
+                <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="GitHub" title="GitHub">
                   <GithubIcon size={20} />
                 </a>
               </div>
@@ -142,13 +175,21 @@ export default function Footer() {
 
           </div>
           
-          <div className="footer-giant-brand">
-            Minseok Shin
+          {/* Mobile Giant Signature Logo */}
+          <div className="footer-giant-brand flex justify-center items-center py-4 select-none my-6">
+            <Image
+              src="/img/logo_minseok_shin.png"
+              alt="Minseok Shin"
+              width={1977}
+              height={336}
+              className="w-full max-w-[420px] h-auto object-contain max-h-[70px] opacity-90"
+              priority
+            />
           </div>
           
           <div className="footer-bottom-bar">
             <div className="footer-logo-small hidden">Minseok Shin</div>
-            <div className="footer-bottom-links">
+            <div className="footer-bottom-links flex items-center gap-4">
               <span className="footer-copyright-text">
                 © 2026 Minseok Shin. All Rights Reserved.
               </span>

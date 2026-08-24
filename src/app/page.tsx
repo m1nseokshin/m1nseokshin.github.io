@@ -5,7 +5,7 @@ import Link from "next/link";
 import TypingTitle from "@/components/TypingTitle";
 import HeroCanvas from "@/components/HeroCanvas";
 import ScrollReveal from "@/components/ScrollReveal";
-import { MailIcon, InstagramIcon, GithubIcon } from "@/components/Footer";
+import { MailIcon, InstagramIcon, GithubIcon, LinkedInIcon } from "@/components/Footer";
 
 import { useRouter } from "next/navigation";
 
@@ -55,7 +55,7 @@ export default function HomePage() {
           <HeroCanvas />
         </div>
 
-        <div className="hero-content-wrapper relative z-10 flex flex-col items-center max-w-[1100px] text-center px-4">
+        <div className="hero-content-wrapper relative z-10 flex flex-col items-center max-w-[1100px] text-center px-4 pointer-events-none">
           <div 
             className="hero-pre-title text-xs uppercase tracking-[2px] font-semibold text-gray-500 mb-6 transition-all duration-1000"
             style={{
@@ -141,13 +141,16 @@ export default function HomePage() {
               </p>
               
               <div className="flex justify-center gap-6 flex-wrap">
-                <a href="mailto:m1nseokdesign@gmail.com" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Email">
+                <a href="mailto:m1nseokdesign@gmail.com" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Email" title="Email">
                   <MailIcon size={24} />
                 </a>
-                <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Instagram">
+                <a href="https://www.linkedin.com/in/m1nseokdesign/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="LinkedIn" title="LinkedIn">
+                  <LinkedInIcon size={24} />
+                </a>
+                <a href="https://www.instagram.com/xx_xstyles" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="Instagram" title="Instagram">
                   <InstagramIcon size={24} />
                 </a>
-                <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="GitHub">
+                <a href="https://github.com/m1nseokshin" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full flex items-center justify-center bg-black text-white hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105" aria-label="GitHub" title="GitHub">
                   <GithubIcon size={24} />
                 </a>
               </div>

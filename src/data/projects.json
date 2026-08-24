@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rally",
+    "index": 0,
+    "tag": "Generative AI & XR Design",
+    "titleKo": "Rally - XR 기반 리듬 탁구 플랫폼",
+    "titleEn": "Rally - XR Rhythm Sports Platform",
+    "descKo": "2026 KDM+ 생성형 AI 디자인 실무 워크숍 우수상 작품. 음악의 리듬과 탁구의 랠리를 결합한 XR 기반 스포츠 브랜드 & UI/UX 디자인 프로젝트.",
+    "descEn": "2026 KDM+ Generative AI Design Workshop Excellence Award Winner. An XR-based rhythm sports brand & UI/UX design project combining music rhythm with table tennis rallies.",
+    "url": "https://m1nseokshin.github.io/rally_presentation/",
+    "img": "/img/p_rally.png",
+    "isAward": false,
+    "awardTextKo": "2026 KDM+ 생성형 AI 디자인 워크숍 우수상",
+    "awardTextEn": "2026 KDM+ Generative AI Workshop Excellence Award"
+  },
+  {
+    "id": "solar-system",
+    "index": 1,
+    "tag": "Three.js & 3D Web",
+    "titleKo": "Solar System 3D 태양계 탐험 사이트",
+    "titleEn": "Solar System 3D Interactive Explorer",
+    "descKo": "천문학적 계산을 바탕으로 재현한 3D 태양계 탐험 웹사이트. Three.js와 인터랙티브 그래픽 기술로 우주 공간을 몰입감 있게 탐색할 수 있습니다.",
+    "descEn": "Interactive 3D solar system recreated with real astronomical calculations, offering an immersive cosmic exploration powered by Three.js.",
+    "url": "https://solarsystem-tawny-eight.vercel.app/",
+    "img": "/img/p_solar.png",
+    "isAward": false,
+    "awardTextKo": "",
+    "awardTextEn": ""
+  },
+  {
+    "id": "mazda-rx7",
+    "index": 2,
+    "tag": "Next.js & Design",
+    "titleKo": "Mazda RX-7 자동차 소개 사이트",
+    "titleEn": "Mazda RX-7 Car Showcase Site",
+    "descKo": "Next.js 기반 RX-7 스포츠카 소개 웹사이트. 물리 엔진 효과와 스크롤 그래픽을 결합한 시각적 경험을 제공합니다.",
+    "descEn": "Next.js based RX-7 sports car website combining physics engine effects and scroll graphics for an interactive visual experience.",
+    "url": "https://mazda-rx-7.vercel.app",
+    "img": "/img/p_01.png",
+    "isAward": false,
+    "awardTextKo": "",
+    "awardTextEn": ""
+  },
+  {
+    "id": "styles",
+    "index": 3,
+    "tag": "Vue.js & UX Design",
+    "titleKo": "Styles 가구 판매 쇼핑몰",
+    "titleEn": "Styles Furniture E-commerce",
+    "descKo": "Vue.js 기반 가구 이커머스 플랫폼. 모던하고 편안한 인테리어 브라우징 UX를 설계했습니다.",
+    "descEn": "Vue.js based furniture e-commerce platform designed for modern and intuitive interior browsing UX.",
+    "url": "https://m1nseokshin.github.io/Styles",
+    "img": "/img/p_02.png",
+    "isAward": false,
+    "awardTextKo": "",
+    "awardTextEn": ""
+  },
+  {
+    "id": "dcu-2023",
+    "index": 4,
+    "tag": "Web Design & Frontend Development",
+    "titleKo": "대구가톨릭대학교 2023년 2학기 과제전 사이트",
+    "titleEn": "Daegu Catholic Univ 2023 Showcase",
+    "descKo": "대구가톨릭대학교 디지털디자인과 2023년 2학기 온라인 과제전 웹사이트. 해당 프로젝트의 웹 디자인 및 전체 프론트엔드 개발을 단독 담당하였습니다.",
+    "descEn": "Online showcase site for 2023 Fall Semester at DCU Digital Design Department. Solely handled web design and full frontend development.",
+    "url": "http://dxd.cu.ac.kr/showcase232/",
+    "img": "/img/p_04.png",
+    "isAward": false,
+    "awardTextKo": "",
+    "awardTextEn": ""
+  }
+]

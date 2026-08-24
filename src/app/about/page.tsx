@@ -58,8 +58,8 @@ export default function AboutPage() {
               <div className="about-desc-block mb-12">
                 <p className="about-desc-main text-2xl font-medium mb-6 leading-normal">
                   {lang === "ko"
-                    ? "현재 부산대학교 디자인학과 디자인테크놀로지전공에 재학하며, 디자인과 기술의 조화를 고민합니다."
-                    : "Currently studying Design Technology at Pusan National University, pursuing the harmony between design and tech."}
+                    ? "현재 부산대학교 디자인학과 디자인앤테크놀로지전공에 재학하며, 디자인과 기술의 조화를 고민합니다."
+                    : "Currently studying Design & Technology at Pusan National University, pursuing the harmony between design and tech."}
                 </p>
                 <p className="about-desc-sub text-base text-gray-500 leading-relaxed">
                   {lang === "ko"
@@ -74,8 +74,8 @@ export default function AboutPage() {
                   </span>
                   <span className="detail-val text-gray-500">
                     {lang === "ko"
-                      ? "부산대학교 예술대학 디자인학과 디자인테크놀로지전공 재학 (2026.03 ~)"
-                      : "Pusan National Univ. Dept. of Design (Design Tech) (2026.03 ~)"}
+                      ? "부산대학교 예술대학 디자인학과 디자인앤테크놀로지전공 재학 (2026.03 ~)"
+                      : "Pusan National Univ. Dept. of Design (Design & Technology) (2026.03 ~)"}
                   </span>
                 </div>
                 <div className="profile-detail-item flex text-base leading-normal">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey & Education Section */}
+      {/* Journey & Experience Section */}
       <ScrollReveal className="py-section px-4" threshold={0.25}>
         <section id="experience" className="experience-section rounded-[32px] py-16 sm:py-24 px-8 sm:px-16" style={{ backgroundColor: "var(--palette-grey-10)" }}>
           <div className="container max-w-[900px]">
@@ -120,10 +120,15 @@ export default function AboutPage() {
                 className="experience-item p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-4 transition-transform duration-300 hover:-translate-y-0.5"
                 style={{ backgroundColor: "var(--theme-surface-surface)", border: "1px solid var(--theme-outline-variant)" }}
               >
-                <h3 className="exp-title text-lg font-semibold">
-                  {lang === "ko" ? "Korea Design Membership Plus 7기" : "Korea Design Membership Plus (7th Cohort)"}
-                </h3>
-                <span className="exp-date text-sm" style={{ color: "var(--theme-surface-on-surface-variant)" }}>
+                <div>
+                  <h3 className="exp-title text-lg font-semibold text-slate-900">
+                    {lang === "ko" ? "Korea Design Membership Plus 7기" : "Korea Design Membership Plus (7th Cohort)"}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {lang === "ko" ? "산업통상자원부 & 한국디자인진흥원 주관 디자인 멤버십" : "Design membership by MOTIE & Korea Institute of Design Promotion"}
+                  </p>
+                </div>
+                <span className="exp-date text-sm font-medium shrink-0 text-slate-400">
                   {lang === "ko" ? "2026.04 ~ 현재 진행 중" : "2026.04 ~ Present"}
                 </span>
               </div>
@@ -131,10 +136,270 @@ export default function AboutPage() {
                 className="experience-item p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-4 transition-transform duration-300 hover:-translate-y-0.5"
                 style={{ backgroundColor: "var(--theme-surface-surface)", border: "1px solid var(--theme-outline-variant)" }}
               >
-                <h3 className="exp-title text-lg font-semibold">
-                  {lang === "ko" ? "Travel Busan With Google Gemini 서포터즈" : "Travel Busan With Google Gemini Supporters"}
-                </h3>
-                <span className="exp-date text-sm" style={{ color: "var(--theme-surface-on-surface-variant)" }}>2026.06</span>
+                <div>
+                  <h3 className="exp-title text-lg font-semibold text-slate-900">
+                    {lang === "ko" ? "Travel Busan With Google Gemini 서포터즈" : "Travel Busan With Google Gemini Supporters"}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {lang === "ko" ? "Google AI 기술을 활용한 부산 관광 인터랙티브 콘텐츠 기획" : "Interactive Busan tourism content creation with Google AI"}
+                  </p>
+                </div>
+                <span className="exp-date text-sm font-medium shrink-0 text-slate-400">2026.06</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Awards & Honors Section */}
+      <ScrollReveal className="py-section px-4" threshold={0.25}>
+        <section id="awards" className="awards-section">
+          <div className="container max-w-[900px]">
+            <div className="section-header text-center mb-[64px]">
+              <p className="section-label">Honors & Recognition</p>
+              <h2 className="section-title">
+                {lang === "ko" ? "수상 이력" : "Awards & Honors"}
+              </h2>
+            </div>
+
+            <div className="awards-list flex flex-col gap-6">
+              {/* Award 1: Spark Gold Winner */}
+              <div 
+                className="award-card p-6 sm:p-8 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:border-gray-200 transition-all duration-300 flex flex-col justify-between gap-6"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-2 flex-wrap">
+                    <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase">
+                      2026 Spark Design Awards
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">2026</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+                    Gold Winner
+                  </h3>
+                  <p className="text-base font-medium text-slate-600 mb-3">
+                    2026 Spark: Spring Student - ReNest
+                  </p>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                    {lang === "ko" 
+                      ? "산불 피해 지역 생태계의 자연 복원을 돕는 생분해성 조류 서식지 시스템 디자인 프로젝트."
+                      : "A biodegradable nest habitat system promoting natural ecological restoration after wildfires."}
+                  </p>
+                  <p className="text-xs text-slate-400">
+                    {lang === "ko" ? "팀원: 손민호, 이지원, 김지수, 신민석 (KDM+)" : "Team: Minho Son, Ji Won Lee, Ji Su Kim, Minseok Shin (KDM+)"}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Official Award Gallery</span>
+                  <a
+                    href="https://galleries.sparkawards.com/gallery?year=2026&comp=1107&entry=0bacc4cb-432d-4ea1-aedf-cee3e3e63ce&search=Renest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-emerald-600 transition-colors"
+                  >
+                    <span>{lang === "ko" ? "공식 갤러리 보기" : "View Official Gallery"}</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Award 2: 2026 KDM+ AI Workshop Award */}
+              <div 
+                className="award-card p-6 sm:p-8 rounded-2xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:border-gray-200 transition-all duration-300 flex flex-col justify-between gap-6"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-2 flex-wrap">
+                    <span className="text-xs font-semibold text-emerald-600 tracking-wider uppercase">
+                      Korea Design Membership Plus
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">2026.08</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">
+                    {lang === "ko" ? "우수상" : "Excellence Award"}
+                  </h3>
+                  <p className="text-base font-medium text-slate-600 mb-3">
+                    {lang === "ko"
+                      ? "2026 KDM+ 생성형 AI 디자인 실무 워크숍 - Rally"
+                      : "2026 KDM+ Generative AI Design Workshop - Rally"}
+                  </p>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                    {lang === "ko" 
+                      ? "음악의 리듬과 탁구의 랠리를 결합한 XR 기반 리듬 스포츠 플랫폼 'Rally' 프로젝트."
+                      : "XR-based rhythm table tennis sports platform project 'Rally' combining music and sport rallies."}
+                  </p>
+                  <p className="text-xs text-slate-400">
+                    Project: Rally (XR Rhythm Sports Platform)
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Presentation Showcase</span>
+                  <a
+                    href="https://m1nseokshin.github.io/rally_presentation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-emerald-600 transition-colors"
+                  >
+                    <span>{lang === "ko" ? "프레젠테이션 바로가기" : "View Presentation"}</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Certifications & Education Section (수료 및 자격) */}
+      <ScrollReveal className="py-section px-4" threshold={0.25}>
+        <section id="certificates" className="certificates-section rounded-[32px] py-16 sm:py-24 px-8 sm:px-16" style={{ backgroundColor: "var(--palette-grey-10)" }}>
+          <div className="container max-w-[900px]">
+            <div className="section-header text-center mb-[48px]">
+              <p className="section-label">Certifications & Training</p>
+              <h2 className="section-title mb-3">
+                {lang === "ko" ? "수료 및 자격" : "Certifications & Education"}
+              </h2>
+              <a
+                href="https://www.linkedin.com/in/m1nseokdesign/details/certifications/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-emerald-600 transition-colors mt-2"
+              >
+                <span>{lang === "ko" ? "LinkedIn에서 수료증 전체보기" : "View all certifications on LinkedIn"}</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="certificates-list flex flex-col gap-6">
+              {/* Certificate 1: Google Cloud Generative AI Leader */}
+              <div 
+                className="certificate-card p-6 sm:p-8 rounded-2xl bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col justify-between gap-4"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
+                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Google Cloud · Coursera
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">2026.08</span>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Generative AI Leader
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {lang === "ko"
+                      ? "Google Cloud 주관 생성형 AI 기초 원리, 비즈니스 전략 기획, Responsible AI, Gen AI Apps 및 엔터프라이즈 멀티에이전트 구축 전문가 과정 수료 및 인증 취득."
+                      : "Professional certificate by Google Cloud covering Generative AI foundational concepts, strategic implementations, Responsible AI, and enterprise Gen AI applications."}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Credential ID: UP7M8STN1W7T</span>
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/specialization/UP7M8STN1W7T"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-emerald-600 transition-colors"
+                  >
+                    <span>{lang === "ko" ? "인증서 검증 (Verify)" : "Verify Credential"}</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Certificate 2: Google AI for App Building */}
+              <div 
+                className="certificate-card p-6 sm:p-8 rounded-2xl bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col justify-between gap-4"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
+                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Google · Coursera
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">2026.08</span>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    AI for App Building
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {lang === "ko"
+                      ? "Google의 생성형 AI 모델과 머신러닝 API를 활용한 스마트 인터랙티브 애플리케이션 기획 및 빌딩 실무 과정 수료."
+                      : "Completed practical course by Google on designing and building intelligent interactive applications powered by AI & ML APIs."}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Credential ID: N22LK00HNU29</span>
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/records/N22LK00HNU29"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-emerald-600 transition-colors"
+                  >
+                    <span>{lang === "ko" ? "인증서 검증 (Verify)" : "Verify Credential"}</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Certificate 3: Higgsfield AI */}
+              <div 
+                className="certificate-card p-6 sm:p-8 rounded-2xl bg-white border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col justify-between gap-4"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
+                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Higgsfield AI
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">2026.08</span>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    {lang === "ko"
+                      ? "Higgsfield AI Creative Studio Video Generation 수료"
+                      : "Higgsfield AI Creative Studio Video Generation Certificate"}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {lang === "ko"
+                      ? "Higgsfield Cinema Studio 기반 생성형 AI 비디오 디렉팅, 프롬프트 엔지니어링 및 고화질 영상 크리에이티브 워크플로우 실무 수료."
+                      : "Completed practical training in generative AI video directing, prompt engineering, and cinematic video workflows using Higgsfield Cinema Studio."}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">Higgsfield AI</span>
+                  <a
+                    href="https://www.linkedin.com/in/m1nseokdesign/details/certifications/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-900 hover:text-emerald-600 transition-colors"
+                  >
+                    <span>{lang === "ko" ? "LinkedIn에서 확인" : "View on LinkedIn"}</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

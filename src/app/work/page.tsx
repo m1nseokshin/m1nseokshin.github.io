@@ -84,21 +84,21 @@ export default function WorkPage() {
             playsInline 
             className="w-full h-full object-cover block"
           />
-          <div className="artworks-video-overlay absolute inset-0 bg-gradient-to-b from-slate-900/40 to-slate-900/80 z-[1]"></div>
+          {/* Video clean display without dark overlay */}
           <div className="artworks-video-content absolute bottom-[10%] left-[10%] right-[10%] z-[2] max-w-[700px] text-white">
-            <h3 className="artworks-video-title text-4xl max-sm:text-3xl font-bold mb-5">Design Artworks</h3>
-            <p className="artworks-video-desc text-lg text-slate-300 leading-relaxed mb-8">
+            <h3 className="artworks-video-title text-4xl max-sm:text-3xl font-bold mb-5 drop-shadow-md">Design Artworks</h3>
+            <p className="artworks-video-desc text-lg !text-white leading-relaxed mb-8 drop-shadow-md">
               {lang === "ko"
                 ? "각종 디자인 작업물들이 모인 사이트입니다."
                 : "A showcase site featuring various motion graphics and design artworks."}
             </p>
             <a 
-              href="https://m1nseokartworks.vercel.app/" 
+              href="https://www.instagram.com/xx_xstyles" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn artworks-visit-btn bg-white text-slate-950 font-semibold hover:bg-gray-100"
             >
-              {lang === "ko" ? "사이트 방문" : "Visit Site"}
+              {lang === "ko" ? "인스타그램 방문" : "Visit Instagram"}
             </a>
           </div>
         </div>

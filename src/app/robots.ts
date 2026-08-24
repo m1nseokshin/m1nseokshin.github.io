@@ -7,7 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/admin/", "/api/"],
     },
-    sitemap: "https://portfolio-2026.vercel.app/sitemap.xml", // Or the actual production domain
+    sitemap: "https://m1nseokshin.github.io/sitemap.xml",
   };
 }
